@@ -132,83 +132,300 @@
             <div class="section-header">
                 <h2 class="section-title">Your Analytics Journey</h2>
                 <p class="section-subtitle">
-                    From ad-hoc queries to enterprise integration - we support your entire data analytics evolution.
+                    Transform from basic reporting to enterprise-grade data intelligence. Choose your path and scale at your own pace.
                 </p>
+                <div class="journey-selector">
+                    <button class="journey-btn active" data-journey="beginner">
+                        <i data-lucide="user"></i>
+                        Business User
+                    </button>
+                    <button class="journey-btn" data-journey="intermediate">
+                        <i data-lucide="code"></i>
+                        Developer
+                    </button>
+                    <button class="journey-btn" data-journey="advanced">
+                        <i data-lucide="building"></i>
+                        Enterprise
+                    </button>
+                </div>
+            </div>
+
+            <div class="progression-overview">
+                <div class="progression-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">3 Months</span>
+                        <span class="stat-label">Average to Level 2</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">85%</span>
+                        <span class="stat-label">Customer Success Rate</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">24/7</span>
+                        <span class="stat-label">Expert Support</span>
+                    </div>
+                </div>
             </div>
 
             <div class="progression-timeline">
                 <div class="timeline-item" data-level="beginner">
                     <div class="timeline-marker">
-                        <i data-lucide="bar-chart-3"></i>
+                        <div class="marker-icon">
+                            <i data-lucide="bar-chart-3"></i>
+                        </div>
+                        <div class="marker-badge">Level 1</div>
                     </div>
                     <div class="timeline-content">
-                        <h3>Ad-Hoc Analytics</h3>
-                        <p class="timeline-description">Start with simple queries and pre-built dashboards to understand your farm data.</p>
-                        <div class="timeline-features">
-                            <div class="feature-tag">Web-based Dashboards</div>
-                            <div class="feature-tag">CSV/Excel Exports</div>
-                            <div class="feature-tag">Basic Reporting</div>
+                        <div class="content-header">
+                            <h3>Interactive Analytics & Dashboards</h3>
+                            <div class="difficulty-badge beginner">Beginner Friendly</div>
+                            <div class="time-estimate">
+                                <i data-lucide="clock"></i>
+                                <span>Setup: 30 minutes</span>
+                            </div>
                         </div>
-                        <div class="timeline-tools">
-                            <h4>Tools & Capabilities:</h4>
-                            <ul>
-                                <li>Interactive web dashboards</li>
-                                <li>Drag-and-drop report builder</li>
-                                <li>Scheduled email reports</li>
-                                <li>Data export functionality</li>
-                            </ul>
+                        <p class="timeline-description">
+                            Start your data journey with intuitive dashboards and reports. Perfect for farm managers and business users who need immediate insights without technical complexity.
+                        </p>
+                        
+                        <div class="feature-showcase">
+                            <div class="feature-highlight">
+                                <i data-lucide="gauge"></i>
+                                <h4>Real-time Dashboards</h4>
+                                <p>Monitor key metrics across all farms with customizable widgets</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <i data-lucide="download"></i>
+                                <h4>Smart Exports</h4>
+                                <p>One-click data exports to Excel, PDF, or automated email reports</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <i data-lucide="bell"></i>
+                                <h4>Intelligent Alerts</h4>
+                                <p>AI-powered notifications for anomalies and optimization opportunities</p>
+                            </div>
                         </div>
-                        <button class="btn-outline">Get Started</button>
+
+                        <div class="use-cases">
+                            <h4><i data-lucide="target"></i> Perfect For:</h4>
+                            <div class="use-case-tags">
+                                <span class="use-case-tag">Farm Managers</span>
+                                <span class="use-case-tag">Operations Teams</span>
+                                <span class="use-case-tag">Performance Tracking</span>
+                                <span class="use-case-tag">Daily Reporting</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-actions">
+                            <button class="btn-primary">
+                                <i data-lucide="play-circle"></i>
+                                Try Interactive Demo
+                            </button>
+                            <button class="btn-outline">
+                                <i data-lucide="book-open"></i>
+                                View Tutorials
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <div class="timeline-item" data-level="intermediate">
                     <div class="timeline-marker">
-                        <i data-lucide="database"></i>
+                        <div class="marker-icon">
+                            <i data-lucide="code-2"></i>
+                        </div>
+                        <div class="marker-badge">Level 2</div>
                     </div>
                     <div class="timeline-content">
-                        <h3>API Integration</h3>
-                        <p class="timeline-description">Connect FarmOnline+ data to your existing tools and workflows through our comprehensive APIs.</p>
-                        <div class="timeline-features">
-                            <div class="feature-tag">REST API</div>
-                            <div class="feature-tag">GraphQL</div>
-                            <div class="feature-tag">WebSocket Streams</div>
+                        <div class="content-header">
+                            <h3>API Integration & Custom Solutions</h3>
+                            <div class="difficulty-badge intermediate">Developer Ready</div>
+                            <div class="time-estimate">
+                                <i data-lucide="clock"></i>
+                                <span>Setup: 2-4 hours</span>
+                            </div>
                         </div>
-                        <div class="timeline-tools">
-                            <h4>Integration Options:</h4>
-                            <ul>
-                                <li>RESTful API with OpenAPI specification</li>
-                                <li>GraphQL for flexible queries</li>
-                                <li>Real-time WebSocket connections</li>
-                                <li>SDK libraries for popular languages</li>
-                            </ul>
+                        <p class="timeline-description">
+                            Unlock programmatic access to your farm data. Build custom applications, integrate with existing systems, and create tailored analytics solutions.
+                        </p>
+                        
+                        <div class="feature-showcase">
+                            <div class="feature-highlight">
+                                <i data-lucide="terminal"></i>
+                                <h4>REST & GraphQL APIs</h4>
+                                <p>Flexible data access with comprehensive documentation and SDKs</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <i data-lucide="zap"></i>
+                                <h4>Real-time Streaming</h4>
+                                <p>WebSocket connections for live data feeds and instant notifications</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <i data-lucide="shield-check"></i>
+                                <h4>Enterprise Security</h4>
+                                <p>OAuth 2.0, API keys, rate limiting, and audit logging</p>
+                            </div>
                         </div>
-                        <button class="btn-outline">View API Docs</button>
+
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span>Quick Start Example</span>
+                                <div class="code-languages">
+                                    <span class="lang active">Python</span>
+                                    <span class="lang">JavaScript</span>
+                                    <span class="lang">C#</span>
+                                </div>
+                            </div>
+                            <div class="code-content">
+                                <pre><code># Get farm data in 3 lines
+import farmonline
+
+client = farmonline.Client(api_key="your_key")
+data = client.get_environmental_data(farm_id="123", timerange="24h")
+print(f"Avg temp: {data.temperature.avg}°C")</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="use-cases">
+                            <h4><i data-lucide="target"></i> Perfect For:</h4>
+                            <div class="use-case-tags">
+                                <span class="use-case-tag">Software Developers</span>
+                                <span class="use-case-tag">System Integrators</span>
+                                <span class="use-case-tag">Custom Apps</span>
+                                <span class="use-case-tag">Data Workflows</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-actions">
+                            <button class="btn-primary">
+                                <i data-lucide="code"></i>
+                                Explore API Docs
+                            </button>
+                            <button class="btn-outline">
+                                <i data-lucide="download"></i>
+                                Download SDKs
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <div class="timeline-item" data-level="advanced">
                     <div class="timeline-marker">
-                        <i data-lucide="server"></i>
+                        <div class="marker-icon">
+                            <i data-lucide="building-2"></i>
+                        </div>
+                        <div class="marker-badge">Level 3</div>
                     </div>
                     <div class="timeline-content">
-                        <h3>Enterprise Integration</h3>
-                        <p class="timeline-description">Seamlessly integrate with your data warehouse, ERP systems, and business intelligence platforms.</p>
-                        <div class="timeline-features">
-                            <div class="feature-tag">Data Warehouse ETL</div>
-                            <div class="feature-tag">ERP Connectors</div>
-                            <div class="feature-tag">BI Platform Integration</div>
+                        <div class="content-header">
+                            <h3>Enterprise Data Architecture</h3>
+                            <div class="difficulty-badge advanced">Enterprise Scale</div>
+                            <div class="time-estimate">
+                                <i data-lucide="clock"></i>
+                                <span>Setup: 1-2 weeks</span>
+                            </div>
                         </div>
-                        <div class="timeline-tools">
-                            <h4>Enterprise Solutions:</h4>
-                            <ul>
-                                <li>Snowflake, BigQuery, Redshift connectors</li>
-                                <li>SAP, Oracle, Microsoft Dynamics integration</li>
-                                <li>Power BI, Tableau, Looker connections</li>
-                                <li>Custom ETL pipeline development</li>
-                            </ul>
+                        <p class="timeline-description">
+                            Scale to enterprise-grade data infrastructure. Seamless integration with data warehouses, ERP systems, and advanced analytics platforms with dedicated support.
+                        </p>
+                        
+                        <div class="feature-showcase">
+                            <div class="feature-highlight">
+                                <i data-lucide="database"></i>
+                                <h4>Data Warehouse ETL</h4>
+                                <p>Automated pipelines to Snowflake, BigQuery, and Redshift</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <i data-lucide="git-branch"></i>
+                                <h4>ERP Integration</h4>
+                                <p>Bidirectional sync with SAP, Oracle, and Microsoft Dynamics</p>
+                            </div>
+                            <div class="feature-highlight">
+                                <i data-lucide="users"></i>
+                                <h4>Dedicated Support</h4>
+                                <p>Technical account manager and 24/7 enterprise support</p>
+                            </div>
                         </div>
-                        <button class="btn-outline">Contact Sales</button>
+
+                        <div class="architecture-preview">
+                            <div class="arch-title">
+                                <i data-lucide="network"></i>
+                                <span>Sample Enterprise Architecture</span>
+                            </div>
+                            <div class="arch-diagram">
+                                <div class="arch-node source">FarmOnline+ APIs</div>
+                                <div class="arch-flow"></div>
+                                <div class="arch-node transform">Data Pipeline</div>
+                                <div class="arch-flow"></div>
+                                <div class="arch-node destination">Your Data Warehouse</div>
+                                <div class="arch-flow vertical"></div>
+                                <div class="arch-node bi">BI Platform</div>
+                            </div>
+                        </div>
+
+                        <div class="enterprise-benefits">
+                            <h4><i data-lucide="star"></i> Enterprise Benefits:</h4>
+                            <div class="benefit-grid">
+                                <div class="benefit-item">
+                                    <i data-lucide="shield"></i>
+                                    <span>SOC 2 Compliance</span>
+                                </div>
+                                <div class="benefit-item">
+                                    <i data-lucide="clock"></i>
+                                    <span>99.9% SLA Guarantee</span>
+                                </div>
+                                <div class="benefit-item">
+                                    <i data-lucide="phone"></i>
+                                    <span>24/7 Support</span>
+                                </div>
+                                <div class="benefit-item">
+                                    <i data-lucide="users"></i>
+                                    <span>Dedicated TAM</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="use-cases">
+                            <h4><i data-lucide="target"></i> Perfect For:</h4>
+                            <div class="use-case-tags">
+                                <span class="use-case-tag">Enterprise IT</span>
+                                <span class="use-case-tag">Data Engineers</span>
+                                <span class="use-case-tag">BI Teams</span>
+                                <span class="use-case-tag">Corporate Analytics</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-actions">
+                            <button class="btn-primary">
+                                <i data-lucide="phone"></i>
+                                Schedule Consultation
+                            </button>
+                            <button class="btn-outline">
+                                <i data-lucide="file-text"></i>
+                                Download Whitepaper
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progression-footer">
+                <div class="migration-path">
+                    <h3><i data-lucide="arrow-up-right"></i> Seamless Migration Path</h3>
+                    <p>Start at any level and upgrade seamlessly. Your existing dashboards, integrations, and data remain intact as you scale up.</p>
+                    <div class="migration-benefits">
+                        <div class="migration-item">
+                            <i data-lucide="shield-check"></i>
+                            <span>Zero Downtime Upgrades</span>
+                        </div>
+                        <div class="migration-item">
+                            <i data-lucide="database"></i>
+                            <span>Data Continuity Guaranteed</span>
+                        </div>
+                        <div class="migration-item">
+                            <i data-lucide="headphones"></i>
+                            <span>Migration Support Included</span>
+                        </div>
                     </div>
                 </div>
             </div>
