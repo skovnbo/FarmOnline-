@@ -1,0 +1,18 @@
+{
+  "name": "farmonline-plus-marketing",
+  "version": "1.0.0",
+  "description": "FarmOnline+ Marketing Website - Data-driven farm management platform",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "python -m http.server 8080 -d dist"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "lucide": "^0.344.0"
+  }
+}
