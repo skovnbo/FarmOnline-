@@ -1,0 +1,144 @@
+<!-- Navigation Component -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <img src="./assets/skov-logo.svg" alt="SKOV" class="logo">
+            <span class="brand">FarmOnline+</span>
+        </div>
+        
+        <!-- Main Navigation Tabs -->
+        <div class="nav-main-tabs">
+            <button class="nav-tab active" data-section="operations">
+                <i data-lucide="home"></i>
+                Operations
+            </button>
+            <button class="nav-tab" data-section="integration">
+                <i data-lucide="code"></i>
+                Integration
+            </button>
+            <button class="nav-tab" data-section="infrastructure">
+                <i data-lucide="server"></i>
+                Infrastructure
+            </button>
+            <button class="nav-tab" data-section="applications">
+                <i data-lucide="smartphone"></i>
+                Applications
+            </button>
+        </div>
+        
+        <!-- Actions -->
+        <div class="nav-actions">
+            <span class="app-version">v<span id="app-version">1.0.0</span></span>
+            <button class="btn-secondary">Request Demo</button>
+            <button class="btn-primary">Start Trial</button>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Dynamic Submenu -->
+    <div class="nav-submenu">
+        <div class="submenu-container">
+            <!-- Operations Submenu -->
+            <ul class="submenu-items active" data-submenu="operations">
+                <li><a href="#hero" class="submenu-link active">Farm Overview</a></li>
+                <li><a href="#features" class="submenu-link">Operations Features</a></li>
+                <li><a href="#solutions" class="submenu-link">Operations Solutions</a></li>
+                <li><a href="#success-stories" class="submenu-link">Success Stories</a></li>
+                <li><a href="#pricing" class="submenu-link">Pricing</a></li>
+                <li><a href="#contact" class="submenu-link">Contact</a></li>
+            </ul>
+            
+            <!-- Integration Submenu -->
+            <ul class="submenu-items" data-submenu="integration">
+                <li><a href="#partner-connectors" class="submenu-link active">Partner Connectors</a></li>
+                <li><a href="#bi-solutions" class="submenu-link">BI Solutions & Excel</a></li>
+                <li><a href="#erp-integration" class="submenu-link">ERP Integration</a></li>
+                <li><a href="#contact" class="submenu-link">Contact</a></li>
+            </ul>
+            
+            <!-- Infrastructure Submenu -->
+            <ul class="submenu-items" data-submenu="infrastructure">
+                <li><a href="#bluecontrol-models" class="submenu-link active">BlueControl Models</a></li>
+                <li><a href="#global-infrastructure" class="submenu-link">Global Infrastructure</a></li>
+                <li><a href="#data-security" class="submenu-link">Data Security</a></li>
+                <li><a href="#infrastructure" class="submenu-link">Performance & Compliance</a></li>
+                <li><a href="#contact" class="submenu-link">Contact</a></li>
+            </ul>
+            
+            <!-- Applications Submenu -->
+            <ul class="submenu-items" data-submenu="applications">
+                <li><a href="#mobile-app" class="submenu-link active">Mobile App</a></li>
+                <li><a href="#survey-webapp" class="submenu-link">Survey WebApp</a></li>
+                <li><a href="#boards-webapp" class="submenu-link">Boards WebApp</a></li>
+                <li><a href="#silo-webapp" class="submenu-link">Silo WebApp</a></li>
+                <li><a href="#reference-webapp" class="submenu-link">Reference WebApp</a></li>
+                <li><a href="#alarm-webapp" class="submenu-link">Alarm WebApp</a></li>
+                <li><a href="#analytics-webapp" class="submenu-link">Analytics WebApp</a></li>
+                <li><a href="#contact" class="submenu-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="nav-mobile-menu" id="mobileMenu">
+        <div class="mobile-section">
+            <div class="mobile-section-title">
+                <i data-lucide="home"></i>
+                Operations
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#hero" class="submenu-link">Farm Overview</a></li>
+                <li><a href="#features" class="submenu-link">Operations Features</a></li>
+                <li><a href="#solutions" class="submenu-link">Operations Solutions</a></li>
+                <li><a href="#success-stories" class="submenu-link">Success Stories</a></li>
+                <li><a href="#pricing" class="submenu-link">Pricing</a></li>
+                <li><a href="#contact" class="submenu-link">Contact</a></li>
+            </ul>
+        </div>
+        <div class="mobile-section">
+            <div class="mobile-section-title">
+                <i data-lucide="code"></i>
+                Integration
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#partner-connectors" class="submenu-link active">Partner Connectors</a></li>
+                <li><a href="#bi-solutions" class="submenu-link">BI Solutions & Excel</a></li>
+                <li><a href="#erp-integration" class="submenu-link">ERP Integration</a></li>
+                <li><a href="#contact" class="submenu-link">Contact</a></li>
+            </ul>
+        </div>
+        <div class="mobile-section">
+            <div class="mobile-section-title">
+                <i data-lucide="server"></i>
+                Infrastructure
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#bluecontrol-models" class="submenu-link">BlueControl Models</a></li>
+                <li><a href="#global-infrastructure" class="submenu-link">Global Infrastructure</a></li>
+                <li><a href="#data-security" class="submenu-link">Data Security</a></li>
+                <li><a href="#infrastructure" class="submenu-link">Performance & Compliance</a></li>
+                <li><a href="#contact" class="submenu-link">Contact</a></li>
+            </ul>
+        </div>
+        <div class="mobile-section">
+            <div class="mobile-section-title">
+                <i data-lucide="smartphone"></i>
+                Applications
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#mobile-app" class="submenu-link">Mobile App</a></li>
+                <li><a href="#survey-webapp" class="submenu-link">Survey WebApp</a></li>
+                <li><a href="#boards-webapp" class="submenu-link">Boards WebApp</a></li>
+                <li><a href="#silo-webapp" class="submenu-link">Silo WebApp</a></li>
+                <li><a href="#reference-webapp" class="submenu-link">Reference WebApp</a></li>
+                <li><a href="#alarm-webapp" class="submenu-link">Alarm WebApp</a></li>
+                <li><a href="#analytics-webapp" class="submenu-link">Analytics WebApp</a></li>
+                <li><a href="#contact" class="submenu-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

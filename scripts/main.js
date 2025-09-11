@@ -1,14 +1,58 @@
 // Initialize Lucide Icons
 lucide.createIcons();
 
-// Mobile Navigation
+// Dynamic Navigation System
+const navTabs = document.querySelectorAll('.nav-tab');
+const submenuItems = document.querySelectorAll('.submenu-items');
 const hamburger = document.getElementById('hamburger');
-const navMenu = document.querySelector('.nav-menu');
+const mobileMenu = document.getElementById('mobileMenu');
 
-if (hamburger && navMenu) {
+// Handle main navigation tab switching
+navTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const section = tab.getAttribute('data-section');
+        
+        // Update active tab
+        navTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        
+        // Update active submenu
+        submenuItems.forEach(submenu => {
+            submenu.classList.remove('active');
+            if (submenu.getAttribute('data-submenu') === section) {
+                submenu.classList.add('active');
+            }
+        });
+    });
+});
+
+// Mobile Navigation Toggle
+if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
         hamburger.classList.toggle('active');
+        
+        // Prevent body scroll when mobile menu is open
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+            mobileMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Close mobile menu when clicking on a link
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links .submenu-link');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        });
     });
 }
 
@@ -18,7 +62,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+            const offsetTop = target.offsetTop - 120; // Account for fixed navbar with submenu
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
@@ -30,26 +74,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Active Navigation Link Highlighting
 function updateActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const submenuLinks = document.querySelectorAll('.submenu-link');
     
     let current = '';
     
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (window.scrollY >= sectionTop) {
+        const sectionTop = section.offsetTop - 150; // Account for navbar height
+        if (window.pageYOffset >= sectionTop) {
             current = section.getAttribute('id');
         }
     });
     
-    navLinks.forEach(link => {
+    submenuLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
+        const href = link.getAttribute('href');
+        if (href === `#${current}` || (current === '' && href === '#hero')) {
             link.classList.add('active');
         }
     });
 }
 
+// Update active link on scroll
 window.addEventListener('scroll', updateActiveNavLink);
+
+// Update active link on page load
+document.addEventListener('DOMContentLoaded', updateActiveNavLink);
 
 // Solutions Tabs Functionality
 const tabButtons = document.querySelectorAll('.tab-btn');

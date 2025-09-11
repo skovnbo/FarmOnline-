@@ -1,0 +1,403 @@
+<!-- Survey WebApp Section -->
+<section class="survey-webapp-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Survey WebApp</h2>
+            <p class="section-subtitle">Analytics tool for farm managers and production managers</p>
+        </div>
+        
+        <div class="webapp-overview">
+            <div class="webapp-hero">
+                <div class="webapp-info">
+                    <h3>Multi-Farm Analytics & Benchmarking</h3>
+                    <p>Gain insights across multiple farms and countries with our comprehensive survey analytics platform. Compare performance, benchmark operations, and track key metrics across your entire farming network.</p>
+                </div>
+                <div class="webapp-visual">
+                    <div class="dashboard-mockup">
+                        <div class="dashboard-header">
+                            <h4>Survey Analytics Dashboard</h4>
+                            <div class="dashboard-controls">
+                                <select>
+                                    <option>All Countries</option>
+                                    <option>Denmark</option>
+                                    <option>Germany</option>
+                                </select>
+                                <select>
+                                    <option>Last 30 Days</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="dashboard-content">
+                            <div class="metrics-row">
+                                <div class="metric-tile">
+                                    <span class="metric-title">Farms</span>
+                                    <span class="metric-number">23</span>
+                                </div>
+                                <div class="metric-tile">
+                                    <span class="metric-title">Houses</span>
+                                    <span class="metric-number">145</span>
+                                </div>
+                                <div class="metric-tile">
+                                    <span class="metric-title">Avg. Weight Gain</span>
+                                    <span class="metric-number">685g</span>
+                                </div>
+                            </div>
+                            <div class="chart-area">
+                                <div class="chart-placeholder">Performance Benchmarking Chart</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i data-lucide="globe"></i>
+                </div>
+                <h4>Multi-Country Overview</h4>
+                <p>View and analyze key values across multiple farms spanning different countries. Get a consolidated view of your global farming operations.</p>
+                <div class="feature-status">
+                    <span class="status-indicator available">Global Access</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i data-lucide="bar-chart-3"></i>
+                </div>
+                <h4>Farm Benchmarking</h4>
+                <p>Compare and benchmark multiple houses across different farms. Identify top performers and areas for improvement in your operations.</p>
+                <div class="feature-status">
+                    <span class="status-indicator available">Comparative Analysis</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i data-lucide="target"></i>
+                </div>
+                <h4>Reference Targeting</h4>
+                <p>Set references and receive clear indications when targets are met or missed. Track performance against your established benchmarks.</p>
+                <div class="feature-status">
+                    <span class="status-indicator available">Target Tracking</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i data-lucide="clock"></i>
+                </div>
+                <h4>Historical Comparison</h4>
+                <p>Compare historical batches to ongoing batches on any selected key value. Analyze climate and production data trends over time.</p>
+                <div class="feature-status">
+                    <span class="status-indicator available">Time Analysis</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i data-lucide="trending-up"></i>
+                </div>
+                <h4>Weight Gain Analysis</h4>
+                <p>Analyze how recent batches perform on weight gain across selected weight intervals (e.g., 15-20kg). Compare performance between different batches.</p>
+                <div class="feature-status">
+                    <span class="status-indicator available">Interval Analysis</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i data-lucide="filter"></i>
+                </div>
+                <h4>Advanced Filtering</h4>
+                <p>Filter and segment data by farm, house, time period, or custom criteria. Create focused views that matter most to your analysis.</p>
+                <div class="feature-status">
+                    <span class="status-indicator available">Custom Views</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="use-cases">
+            <h3>Perfect For</h3>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <div class="use-case-icon">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h4>Farm Managers</h4>
+                    <p>Get comprehensive insights into farm performance, identify trends, and make data-driven decisions for operational improvements.</p>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-icon">
+                        <i data-lucide="briefcase"></i>
+                    </div>
+                    <h4>Production Managers</h4>
+                    <p>Monitor production metrics across multiple sites, benchmark performance, and optimize production strategies.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.survey-webapp-section {
+    padding: 2rem 0;
+    background: linear-gradient(135deg, #fefefe 0%, #f1f5f9 100%);
+}
+
+.webapp-overview {
+    margin: 3rem 0;
+}
+
+.webapp-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.webapp-info h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.webapp-info p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.dashboard-mockup {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.dashboard-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-header h4 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.dashboard-controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.dashboard-controls select {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.dashboard-content {
+    padding: 2rem;
+}
+
+.metrics-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.metric-tile {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.metric-title {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.metric-number {
+    display: block;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.chart-area {
+    height: 200px;
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-placeholder {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.feature-icon i {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.feature-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.feature-status {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.status-indicator {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status-indicator.available {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.use-cases {
+    margin: 4rem 0;
+    padding: 3rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.use-cases h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.use-cases-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.use-case {
+    text-align: center;
+}
+
+.use-case-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.use-case-icon i {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.use-case h4 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.use-case p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .webapp-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .dashboard-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .dashboard-controls {
+        justify-content: center;
+    }
+    
+    .metrics-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .use-cases-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>

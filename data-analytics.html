@@ -20,15 +20,24 @@
                 <img src="./assets/skov-logo.svg" alt="SKOV" class="logo">
                 <span class="brand">FarmOnline+</span>
             </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="#overview" class="nav-link">Overview</a></li>
-                <li><a href="#progression" class="nav-link">Analytics Journey</a></li>
-                <li><a href="#api-docs" class="nav-link">API Documentation</a></li>
-                <li><a href="#integration" class="nav-link">Integration</a></li>
-                <li><a href="#resources" class="nav-link">Resources</a></li>
-                <li><a href="#support" class="nav-link">Support</a></li>
-            </ul>
+            
+            <!-- Main Navigation Tabs -->
+            <div class="nav-main-tabs">
+                <button class="nav-tab" data-section="management">
+                    <i data-lucide="home"></i>
+                    Management
+                </button>
+                <button class="nav-tab active" data-section="integration">
+                    <i data-lucide="code"></i>
+                    Integration
+                </button>
+                <button class="nav-tab" data-section="infrastructure">
+                    <i data-lucide="server"></i>
+                    Infrastructure
+                </button>
+            </div>
+            
+            <!-- Actions -->
             <div class="nav-actions">
                 <button class="btn-secondary">API Sandbox</button>
                 <button class="btn-primary">Get API Key</button>
@@ -37,6 +46,87 @@
                     <span></span>
                     <span></span>
                 </button>
+            </div>
+        </div>
+        
+        <!-- Dynamic Submenu -->
+        <div class="nav-submenu">
+            <div class="submenu-container">
+                <!-- Management Submenu -->
+                <ul class="submenu-items" data-submenu="management">
+                    <li><a href="index.html" class="submenu-link">Home</a></li>
+                    <li><a href="index.html#features" class="submenu-link">Features</a></li>
+                    <li><a href="index.html#solutions" class="submenu-link">Solutions</a></li>
+                    <li><a href="index.html#ecosystem" class="submenu-link">Ecosystem</a></li>
+                    <li><a href="index.html#success-stories" class="submenu-link">Success Stories</a></li>
+                    <li><a href="index.html#pricing" class="submenu-link">Pricing</a></li>
+                    <li><a href="index.html#contact" class="submenu-link">Contact</a></li>
+                </ul>
+                
+                <!-- Integration Submenu -->
+                <ul class="submenu-items active" data-submenu="integration">
+                    <li><a href="#overview" class="submenu-link active">Analytics Overview</a></li>
+                    <li><a href="#progression" class="submenu-link">Analytics Journey</a></li>
+                    <li><a href="#api-docs" class="submenu-link">API Documentation</a></li>
+                    <li><a href="#integration" class="submenu-link">Enterprise Integration</a></li>
+                    <li><a href="#resources" class="submenu-link">Developer Resources</a></li>
+                    <li><a href="#support" class="submenu-link">Support</a></li>
+                </ul>
+                
+                <!-- Infrastructure Submenu -->
+                <ul class="submenu-items" data-submenu="infrastructure">
+                    <li><a href="index.html#infrastructure" class="submenu-link">Global Infrastructure</a></li>
+                    <li><a href="index.html#infrastructure" class="submenu-link">Regional Servers</a></li>
+                    <li><a href="index.html#infrastructure" class="submenu-link">Data Security</a></li>
+                    <li><a href="index.html#infrastructure" class="submenu-link">Performance</a></li>
+                    <li><a href="index.html#infrastructure" class="submenu-link">Compliance</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="nav-mobile-menu" id="mobileMenu">
+            <div class="mobile-section">
+                <div class="mobile-section-title">
+                    <i data-lucide="home"></i>
+                    Management
+                </div>
+                <ul class="mobile-nav-links">
+                    <li><a href="index.html" class="submenu-link">Home</a></li>
+                    <li><a href="index.html#features" class="submenu-link">Features</a></li>
+                    <li><a href="index.html#solutions" class="submenu-link">Solutions</a></li>
+                    <li><a href="index.html#ecosystem" class="submenu-link">Ecosystem</a></li>
+                    <li><a href="index.html#success-stories" class="submenu-link">Success Stories</a></li>
+                    <li><a href="index.html#pricing" class="submenu-link">Pricing</a></li>
+                    <li><a href="index.html#contact" class="submenu-link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="mobile-section">
+                <div class="mobile-section-title">
+                    <i data-lucide="code"></i>
+                    Integration
+                </div>
+                <ul class="mobile-nav-links">
+                    <li><a href="#overview" class="submenu-link">Analytics Overview</a></li>
+                    <li><a href="#progression" class="submenu-link">Analytics Journey</a></li>
+                    <li><a href="#api-docs" class="submenu-link">API Documentation</a></li>
+                    <li><a href="#integration" class="submenu-link">Enterprise Integration</a></li>
+                    <li><a href="#resources" class="submenu-link">Developer Resources</a></li>
+                    <li><a href="#support" class="submenu-link">Support</a></li>
+                </ul>
+            </div>
+            <div class="mobile-section">
+                <div class="mobile-section-title">
+                    <i data-lucide="server"></i>
+                    Infrastructure
+                </div>
+                <ul class="mobile-nav-links">
+                    <li><a href="index.html#infrastructure" class="submenu-link">Global Infrastructure</a></li>
+                    <li><a href="index.html#infrastructure" class="submenu-link">Regional Servers</a></li>
+                    <li><a href="index.html#infrastructure" class="submenu-link">Data Security</a></li>
+                    <li><a href="index.html#infrastructure" class="submenu-link">Performance</a></li>
+                    <li><a href="index.html#infrastructure" class="submenu-link">Compliance</a></li>
+                </ul>
             </div>
         </div>
     </nav>

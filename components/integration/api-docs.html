@@ -1,0 +1,31 @@
+<!-- API Documentation Component -->
+<section id="api-docs" class="api-docs">
+    <div class="container">
+        <div class="section-header">
+            <h2>API Documentation</h2>
+            <p>Complete API reference for FarmOnline+ integration</p>
+        </div>
+        
+        <div class="api-content">
+            <div class="api-section">
+                <h3>Getting Started</h3>
+                <p>Learn how to authenticate and make your first API calls to FarmOnline+</p>
+                <div class="code-example">
+                    <pre><code>curl -H "Authorization: Bearer YOUR_API_KEY" \
+     -H "Content-Type: application/json" \
+     https://api.farmonline.com/v1/farms</code></pre>
+                </div>
+            </div>
+            
+            <div class="api-section">
+                <h3>Endpoints</h3>
+                <ul class="api-endpoints">
+                    <li><span class="method get">GET</span> /farms - List all farms</li>
+                    <li><span class="method get">GET</span> /farms/{id}/sensors - Get sensor data</li>
+                    <li><span class="method post">POST</span> /farms/{id}/alerts - Create alert</li>
+                    <li><span class="method put">PUT</span> /farms/{id}/settings - Update settings</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
