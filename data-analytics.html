@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics & Integration - FarmOnline+ by SKOV</title>
+    <meta name="description" content="Comprehensive data analytics and integration solutions for IT professionals. From ad-hoc analytics to enterprise data warehouse integration with FarmOnline+.">
+    <meta name="keywords" content="farm data analytics, API integration, data warehouse, business intelligence, ERP integration, farm data visualization">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="./assets/skov-logo.svg" alt="SKOV" class="logo">
+                <span class="brand">FarmOnline+</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="#overview" class="nav-link">Overview</a></li>
+                <li><a href="#progression" class="nav-link">Analytics Journey</a></li>
+                <li><a href="#api-docs" class="nav-link">API Documentation</a></li>
+                <li><a href="#integration" class="nav-link">Integration</a></li>
+                <li><a href="#resources" class="nav-link">Resources</a></li>
+                <li><a href="#support" class="nav-link">Support</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-secondary">API Sandbox</button>
+                <button class="btn-primary">Get API Key</button>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="overview" class="data-hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Enterprise-Grade 
+                        <span class="gradient-text">Farm Data Analytics</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Unlock the full potential of your farm data with comprehensive analytics and seamless integration capabilities. 
+                        From simple dashboards to enterprise data warehouses.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">500TB+</span>
+                            <span class="stat-label">Data Processed Daily</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">99.9%</span>
+                            <span class="stat-label">API Uptime</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50ms</span>
+                            <span class="stat-label">Average Response Time</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <button class="btn-primary btn-large">
+                            <i data-lucide="code"></i>
+                            Explore API Documentation
+                        </button>
+                        <button class="btn-secondary btn-large">
+                            <i data-lucide="play-circle"></i>
+                            Try Interactive Demo
+                        </button>
+                    </div>
+                    <p class="hero-note">
+                        <i data-lucide="shield-check"></i>
+                        SOC 2 Certified • GDPR Compliant • Enterprise SLA Available
+                    </p>
+                </div>
+                <div class="hero-visual">
+                    <div class="code-preview">
+                        <div class="code-header">
+                            <div class="code-tabs">
+                                <span class="tab active">REST API</span>
+                                <span class="tab">GraphQL</span>
+                                <span class="tab">WebSocket</span>
+                            </div>
+                        </div>
+                        <div class="code-content">
+                            <pre><code>{
+  "query": {
+    "timeRange": "last_24h",
+    "metrics": ["temperature", "humidity", "co2"],
+    "houses": ["house_1", "house_2"]
+  },
+  "response": {
+    "data": {
+      "temperature": {
+        "avg": 22.5,
+        "min": 19.2,
+        "max": 24.8
+      },
+      "alerts": [
+        {
+          "type": "temperature_high",
+          "house": "house_2",
+          "timestamp": "2025-09-11T14:30:00Z"
+        }
+      ]
+    }
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Progression Section -->
+    <section id="progression" class="analytics-progression">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Your Analytics Journey</h2>
+                <p class="section-subtitle">
+                    From ad-hoc queries to enterprise integration - we support your entire data analytics evolution.
+                </p>
+            </div>
+
+            <div class="progression-timeline">
+                <div class="timeline-item" data-level="beginner">
+                    <div class="timeline-marker">
+                        <i data-lucide="bar-chart-3"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Ad-Hoc Analytics</h3>
+                        <p class="timeline-description">Start with simple queries and pre-built dashboards to understand your farm data.</p>
+                        <div class="timeline-features">
+                            <div class="feature-tag">Web-based Dashboards</div>
+                            <div class="feature-tag">CSV/Excel Exports</div>
+                            <div class="feature-tag">Basic Reporting</div>
+                        </div>
+                        <div class="timeline-tools">
+                            <h4>Tools & Capabilities:</h4>
+                            <ul>
+                                <li>Interactive web dashboards</li>
+                                <li>Drag-and-drop report builder</li>
+                                <li>Scheduled email reports</li>
+                                <li>Data export functionality</li>
+                            </ul>
+                        </div>
+                        <button class="btn-outline">Get Started</button>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-level="intermediate">
+                    <div class="timeline-marker">
+                        <i data-lucide="database"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>API Integration</h3>
+                        <p class="timeline-description">Connect FarmOnline+ data to your existing tools and workflows through our comprehensive APIs.</p>
+                        <div class="timeline-features">
+                            <div class="feature-tag">REST API</div>
+                            <div class="feature-tag">GraphQL</div>
+                            <div class="feature-tag">WebSocket Streams</div>
+                        </div>
+                        <div class="timeline-tools">
+                            <h4>Integration Options:</h4>
+                            <ul>
+                                <li>RESTful API with OpenAPI specification</li>
+                                <li>GraphQL for flexible queries</li>
+                                <li>Real-time WebSocket connections</li>
+                                <li>SDK libraries for popular languages</li>
+                            </ul>
+                        </div>
+                        <button class="btn-outline">View API Docs</button>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-level="advanced">
+                    <div class="timeline-marker">
+                        <i data-lucide="server"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Enterprise Integration</h3>
+                        <p class="timeline-description">Seamlessly integrate with your data warehouse, ERP systems, and business intelligence platforms.</p>
+                        <div class="timeline-features">
+                            <div class="feature-tag">Data Warehouse ETL</div>
+                            <div class="feature-tag">ERP Connectors</div>
+                            <div class="feature-tag">BI Platform Integration</div>
+                        </div>
+                        <div class="timeline-tools">
+                            <h4>Enterprise Solutions:</h4>
+                            <ul>
+                                <li>Snowflake, BigQuery, Redshift connectors</li>
+                                <li>SAP, Oracle, Microsoft Dynamics integration</li>
+                                <li>Power BI, Tableau, Looker connections</li>
+                                <li>Custom ETL pipeline development</li>
+                            </ul>
+                        </div>
+                        <button class="btn-outline">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Documentation Section -->
+    <section id="api-docs" class="api-documentation">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Comprehensive API Documentation</h2>
+                <p class="section-subtitle">
+                    Everything you need to integrate FarmOnline+ data into your applications and workflows.
+                </p>
+            </div>
+
+            <div class="api-categories">
+                <div class="api-category">
+                    <div class="api-icon">
+                        <i data-lucide="thermometer"></i>
+                    </div>
+                    <h3>Environmental Data API</h3>
+                    <p>Access real-time and historical environmental data from your farm sensors.</p>
+                    <div class="api-endpoints">
+                        <div class="endpoint">
+                            <span class="method get">GET</span>
+                            <span class="path">/api/v1/environmental/current</span>
+                        </div>
+                        <div class="endpoint">
+                            <span class="method get">GET</span>
+                            <span class="path">/api/v1/environmental/history</span>
+                        </div>
+                        <div class="endpoint">
+                            <span class="method post">POST</span>
+                            <span class="path">/api/v1/environmental/alerts</span>
+                        </div>
+                    </div>
+                    <a href="#" class="api-link">View Documentation <i data-lucide="external-link"></i></a>
+                </div>
+
+                <div class="api-category">
+                    <div class="api-icon">
+                        <i data-lucide="activity"></i>
+                    </div>
+                    <h3>Production Analytics API</h3>
+                    <p>Retrieve production metrics, feed consumption, and performance indicators.</p>
+                    <div class="api-endpoints">
+                        <div class="endpoint">
+                            <span class="method get">GET</span>
+                            <span class="path">/api/v1/production/metrics</span>
+                        </div>
+                        <div class="endpoint">
+                            <span class="method get">GET</span>
+                            <span class="path">/api/v1/production/feed</span>
+                        </div>
+                        <div class="endpoint">
+                            <span class="method get">GET</span>
+                            <span class="path">/api/v1/production/efficiency</span>
+                        </div>
+                    </div>
+                    <a href="#" class="api-link">View Documentation <i data-lucide="external-link"></i></a>
+                </div>
+
+                <div class="api-category">
+                    <div class="api-icon">
+                        <i data-lucide="bell"></i>
+                    </div>
+                    <h3>Alerts & Events API</h3>
+                    <p>Manage alerts, notifications, and event streams from your farm operations.</p>
+                    <div class="api-endpoints">
+                        <div class="endpoint">
+                            <span class="method get">GET</span>
+                            <span class="path">/api/v1/alerts/active</span>
+                        </div>
+                        <div class="endpoint">
+                            <span class="method post">POST</span>
+                            <span class="path">/api/v1/alerts/configure</span>
+                        </div>
+                        <div class="endpoint">
+                            <span class="method ws">WS</span>
+                            <span class="path">/ws/alerts/stream</span>
+                        </div>
+                    </div>
+                    <a href="#" class="api-link">View Documentation <i data-lucide="external-link"></i></a>
+                </div>
+
+                <div class="api-category">
+                    <div class="api-icon">
+                        <i data-lucide="settings"></i>
+                    </div>
+                    <h3>Control Systems API</h3>
+                    <p>Programmatically control ventilation, heating, and feeding systems.</p>
+                    <div class="api-endpoints">
+                        <div class="endpoint">
+                            <span class="method get">GET</span>
+                            <span class="path">/api/v1/controls/status</span>
+                        </div>
+                        <div class="endpoint">
+                            <span class="method put">PUT</span>
+                            <span class="path">/api/v1/controls/setpoints</span>
+                        </div>
+                        <div class="endpoint">
+                            <span class="method post">POST</span>
+                            <span class="path">/api/v1/controls/override</span>
+                        </div>
+                    </div>
+                    <a href="#" class="api-link">View Documentation <i data-lucide="external-link"></i></a>
+                </div>
+            </div>
+
+            <div class="api-tools">
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <i data-lucide="code-2"></i>
+                        <h4>Interactive API Explorer</h4>
+                        <p>Test API endpoints directly in your browser with our interactive documentation.</p>
+                        <button class="btn-primary">Launch Explorer</button>
+                    </div>
+                    <div class="tool-card">
+                        <i data-lucide="download"></i>
+                        <h4>SDK Libraries</h4>
+                        <p>Pre-built libraries for Python, JavaScript, C#, and Java to accelerate development.</p>
+                        <button class="btn-secondary">Download SDKs</button>
+                    </div>
+                    <div class="tool-card">
+                        <i data-lucide="sandbox"></i>
+                        <h4>Developer Sandbox</h4>
+                        <p>Test your integrations in a safe environment with sample farm data.</p>
+                        <button class="btn-secondary">Access Sandbox</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integration Partners Section -->
+    <section id="integration" class="integration-partners">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Enterprise Integration Partners</h2>
+                <p class="section-subtitle">
+                    Seamlessly connect with leading business platforms and data infrastructure providers.
+                </p>
+            </div>
+
+            <div class="integration-grid">
+                <div class="integration-category">
+                    <h3>Data Warehouses</h3>
+                    <div class="partner-logos">
+                        <div class="partner-card">
+                            <img src="./assets/partners/snowflake-logo.svg" alt="Snowflake">
+                            <h4>Snowflake</h4>
+                            <p>Native connector for real-time data streaming</p>
+                            <div class="integration-status available">Available</div>
+                        </div>
+                        <div class="partner-card">
+                            <img src="./assets/partners/bigquery-logo.svg" alt="Google BigQuery">
+                            <h4>Google BigQuery</h4>
+                            <p>Direct data pipeline with automated schema mapping</p>
+                            <div class="integration-status available">Available</div>
+                        </div>
+                        <div class="partner-card">
+                            <img src="./assets/partners/redshift-logo.svg" alt="Amazon Redshift">
+                            <h4>Amazon Redshift</h4>
+                            <p>High-performance analytics with optimized queries</p>
+                            <div class="integration-status available">Available</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="integration-category">
+                    <h3>Business Intelligence</h3>
+                    <div class="partner-logos">
+                        <div class="partner-card">
+                            <img src="./assets/partners/powerbi-logo.svg" alt="Microsoft Power BI">
+                            <h4>Microsoft Power BI</h4>
+                            <p>Pre-built templates and custom connectors</p>
+                            <div class="integration-status available">Available</div>
+                        </div>
+                        <div class="partner-card">
+                            <img src="./assets/partners/tableau-logo.svg" alt="Tableau">
+                            <h4>Tableau</h4>
+                            <p>Advanced visualizations with real-time data refresh</p>
+                            <div class="integration-status available">Available</div>
+                        </div>
+                        <div class="partner-card">
+                            <img src="./assets/partners/looker-logo.svg" alt="Looker">
+                            <h4>Looker</h4>
+                            <p>LookML models for farm analytics</p>
+                            <div class="integration-status beta">Beta</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="integration-category">
+                    <h3>ERP Systems</h3>
+                    <div class="partner-logos">
+                        <div class="partner-card">
+                            <img src="./assets/partners/sap-logo.svg" alt="SAP">
+                            <h4>SAP</h4>
+                            <p>Bidirectional sync with SAP S/4HANA and ByDesign</p>
+                            <div class="integration-status available">Available</div>
+                        </div>
+                        <div class="partner-card">
+                            <img src="./assets/partners/oracle-logo.svg" alt="Oracle">
+                            <h4>Oracle ERP Cloud</h4>
+                            <p>Seamless integration with Oracle Fusion applications</p>
+                            <div class="integration-status available">Available</div>
+                        </div>
+                        <div class="partner-card">
+                            <img src="./assets/partners/dynamics-logo.svg" alt="Microsoft Dynamics">
+                            <h4>Microsoft Dynamics</h4>
+                            <p>Native integration with Dynamics 365 Business Central</p>
+                            <div class="integration-status coming-soon">Coming Soon</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-integration">
+                <div class="custom-integration-content">
+                    <div class="custom-integration-text">
+                        <h3>Need a Custom Integration?</h3>
+                        <p>Our professional services team can build custom connectors and integrations for your specific enterprise requirements. From legacy systems to cutting-edge platforms.</p>
+                        <ul>
+                            <li>Custom API development</li>
+                            <li>ETL pipeline creation</li>
+                            <li>Data transformation services</li>
+                            <li>Ongoing integration support</li>
+                        </ul>
+                        <button class="btn-primary">Discuss Your Needs</button>
+                    </div>
+                    <div class="custom-integration-visual">
+                        <div class="integration-diagram">
+                            <div class="diagram-node central">FarmOnline+</div>
+                            <div class="diagram-node external">Your ERP</div>
+                            <div class="diagram-node external">Data Warehouse</div>
+                            <div class="diagram-node external">BI Platform</div>
+                            <div class="diagram-connection"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Developer Resources</h2>
+                <p class="section-subtitle">
+                    Everything you need to successfully integrate and extend FarmOnline+ capabilities.
+                </p>
+            </div>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i data-lucide="book-open"></i>
+                    </div>
+                    <h3>Getting Started Guide</h3>
+                    <p>Step-by-step tutorials to help you make your first API call and build your first integration.</p>
+                    <div class="resource-meta">
+                        <span class="resource-time">15 min read</span>
+                        <span class="resource-level">Beginner</span>
+                    </div>
+                    <a href="#" class="resource-link">Read Guide</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i data-lucide="code"></i>
+                    </div>
+                    <h3>Code Examples</h3>
+                    <p>Real-world code examples and use cases across multiple programming languages and frameworks.</p>
+                    <div class="resource-meta">
+                        <span class="resource-time">Various</span>
+                        <span class="resource-level">All Levels</span>
+                    </div>
+                    <a href="#" class="resource-link">Browse Examples</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i data-lucide="video"></i>
+                    </div>
+                    <h3>Video Tutorials</h3>
+                    <p>Watch expert-led tutorials covering common integration scenarios and best practices.</p>
+                    <div class="resource-meta">
+                        <span class="resource-time">5-30 min</span>
+                        <span class="resource-level">Intermediate</span>
+                    </div>
+                    <a href="#" class="resource-link">Watch Videos</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3>Developer Community</h3>
+                    <p>Join our community forum to ask questions, share solutions, and collaborate with other developers.</p>
+                    <div class="resource-meta">
+                        <span class="resource-time">Always active</span>
+                        <span class="resource-level">All Levels</span>
+                    </div>
+                    <a href="#" class="resource-link">Join Community</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i data-lucide="file-text"></i>
+                    </div>
+                    <h3>Technical Whitepapers</h3>
+                    <p>In-depth technical documentation covering architecture, security, and advanced integration patterns.</p>
+                    <div class="resource-meta">
+                        <span class="resource-time">30-60 min</span>
+                        <span class="resource-level">Advanced</span>
+                    </div>
+                    <a href="#" class="resource-link">Read Papers</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i data-lucide="headphones"></i>
+                    </div>
+                    <h3>Webinar Series</h3>
+                    <p>Monthly webinars featuring new features, integration patterns, and customer success stories.</p>
+                    <div class="resource-meta">
+                        <span class="resource-time">60 min</span>
+                        <span class="resource-level">All Levels</span>
+                    </div>
+                    <a href="#" class="resource-link">View Schedule</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="support">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Developer Support</h2>
+                <p class="section-subtitle">
+                    Get the help you need, when you need it, with our comprehensive support options.
+                </p>
+            </div>
+
+            <div class="support-options">
+                <div class="support-tier">
+                    <div class="tier-header">
+                        <h3>Community Support</h3>
+                        <div class="tier-price">Free</div>
+                    </div>
+                    <div class="tier-features">
+                        <ul>
+                            <li><i data-lucide="check"></i>Community forum access</li>
+                            <li><i data-lucide="check"></i>Documentation and guides</li>
+                            <li><i data-lucide="check"></i>Code examples repository</li>
+                            <li><i data-lucide="check"></i>Email support (48h response)</li>
+                        </ul>
+                    </div>
+                    <button class="btn-outline">Get Started</button>
+                </div>
+
+                <div class="support-tier featured">
+                    <div class="tier-header">
+                        <h3>Developer Support</h3>
+                        <div class="tier-price">$299<span>/month</span></div>
+                    </div>
+                    <div class="tier-features">
+                        <ul>
+                            <li><i data-lucide="check"></i>Priority email support (4h response)</li>
+                            <li><i data-lucide="check"></i>Video call support sessions</li>
+                            <li><i data-lucide="check"></i>Code review assistance</li>
+                            <li><i data-lucide="check"></i>Integration planning consultation</li>
+                            <li><i data-lucide="check"></i>Early access to new features</li>
+                        </ul>
+                    </div>
+                    <button class="btn-primary">Contact Sales</button>
+                </div>
+
+                <div class="support-tier">
+                    <div class="tier-header">
+                        <h3>Enterprise Support</h3>
+                        <div class="tier-price">Custom</div>
+                    </div>
+                    <div class="tier-features">
+                        <ul>
+                            <li><i data-lucide="check"></i>24/7 phone and email support</li>
+                            <li><i data-lucide="check"></i>Dedicated technical account manager</li>
+                            <li><i data-lucide="check"></i>Custom integration development</li>
+                            <li><i data-lucide="check"></i>On-site training and workshops</li>
+                            <li><i data-lucide="check"></i>SLA guarantees</li>
+                        </ul>
+                    </div>
+                    <button class="btn-outline">Contact Sales</button>
+                </div>
+            </div>
+
+            <div class="support-contact">
+                <div class="contact-grid">
+                    <div class="contact-method">
+                        <i data-lucide="mail"></i>
+                        <h4>Email Support</h4>
+                        <p>developers@skov.com</p>
+                    </div>
+                    <div class="contact-method">
+                        <i data-lucide="message-circle"></i>
+                        <h4>Live Chat</h4>
+                        <p>Available 9 AM - 5 PM CET</p>
+                    </div>
+                    <div class="contact-method">
+                        <i data-lucide="phone"></i>
+                        <h4>Phone Support</h4>
+                        <p>+45 87 47 47 47</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="./assets/skov-logo.svg" alt="SKOV" class="logo">
+                        <span class="brand">FarmOnline+</span>
+                    </div>
+                    <p>Advanced farm management through intelligent data analytics and seamless integration.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>API Resources</h4>
+                    <ul>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">SDK Downloads</a></li>
+                        <li><a href="#">Code Examples</a></li>
+                        <li><a href="#">API Status</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Developer Tools</h4>
+                    <ul>
+                        <li><a href="#">Interactive Explorer</a></li>
+                        <li><a href="#">Developer Sandbox</a></li>
+                        <li><a href="#">Webhook Testing</a></li>
+                        <li><a href="#">API Keys</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Community Forum</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">System Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SKOV A/S. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">API Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
