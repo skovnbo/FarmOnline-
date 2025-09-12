@@ -1,14 +1,42 @@
-# FarmOnline+ Marketing Website
+# FarmOnline+ Website Development Workflow
 
-An awesome, data-driven marketing website for SKOV's FarmOnline+ platform, built with modern web technologies and designed to convert visitors into customers.
+## 🚀 Quick Start
 
-## 🚀 Features
+### Development (Local)
+```bash
+npm run dev
+```
+This opens the component-based development version at `index-dev.html`
 
-- **Modern, Responsive Design** - Mobile-first approach with smooth animations
-- **Data-Driven Messaging** - Value-first communication strategy implementation
-- **Interactive Components** - Engaging user experience with real-time previews
-- **Performance Optimized** - Fast loading with lazy loading and optimized assets
-- **Conversion Focused** - Strategic CTAs and lead generation forms
+### Deploy to GitHub Pages
+```bash
+npm run deploy
+```
+This automatically:
+1. Builds a single-file version with all components inline
+2. Replaces `index.html` with the built version
+3. Commits and pushes to GitHub Pages
+
+## � File Structure
+
+- `index-dev.html` - Development version with modular components
+- `index.html` - GitHub Pages version (auto-generated, don't edit manually)
+- `components/` - All component files organized by section
+- `scripts/build-github-pages.js` - Automated build script
+
+## 🔄 Workflow
+
+1. **Development**: Edit components in `components/` folder
+2. **Test locally**: `npm run dev` 
+3. **Deploy**: `npm run deploy` when ready
+4. **GitHub Pages**: Automatically updated with single-file version
+
+## 📋 Available Commands
+
+- `npm run dev` - Development server with component loading
+- `npm run dev:clean` - Clean Vite development server
+- `npm run build:github` - Build GitHub Pages version only
+- `npm run deploy` - Build and deploy to GitHub Pages
 
 ## 🛠️ Technology Stack
 

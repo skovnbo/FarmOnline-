@@ -4,12 +4,13 @@
   "description": "FarmOnline+ Marketing Website - Data-driven farm management platform",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open index-dev.html",
+    "dev:clean": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "serve": "python -m http.server 8080 -d dist",
     "build:github": "node scripts/build-github-pages.js",
-    "deploy": "npm run build:github && git add dist/index.html && git commit -m 'Update GitHub Pages build' && git push"
+    "deploy": "npm run build:github && copy dist\\index.html index.html && git add index.html && git commit -m 'Update GitHub Pages build' && git push"
   },
   "devDependencies": {
     "vite": "^5.0.0"
