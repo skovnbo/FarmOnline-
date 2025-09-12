@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         '<!-- MANAGEMENT_FEATURES_COMPONENT -->': 'components/management/features.html',
         '<!-- MANAGEMENT_BENEFITS_COMPONENT -->': 'components/management/benefits.html',
         '<!-- INTEGRATION_SECTIONS_COMPONENT -->': 'components/integration/sections.html',
+        '<!-- INFRASTRUCTURE_SECTIONS_COMPONENT -->': 'components/infrastructure/sections.html',
+        '<!-- APPLICATIONS_SECTIONS_COMPONENT -->': 'components/applications/sections.html',
         '<!-- ANALYTICS_HERO_COMPONENT -->': 'components/analytics/hero.html',
         '<!-- ANALYTICS_OVERVIEW_COMPONENT -->': 'components/analytics/overview.html',
         '<!-- ANALYTICS_FEATURES_COMPONENT -->': 'components/analytics/features.html',

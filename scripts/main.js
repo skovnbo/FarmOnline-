@@ -22,12 +22,14 @@ navTabs.forEach(tab => {
         navTabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
         
-        // Show/hide content sections
+        // Show/hide content sections hierarchically
         const contentSections = document.querySelectorAll('.content-section');
         contentSections.forEach(contentSection => {
             if (contentSection.getAttribute('data-section') === section) {
+                contentSection.classList.add('active');
                 contentSection.style.display = 'block';
             } else {
+                contentSection.classList.remove('active');
                 contentSection.style.display = 'none';
             }
         });
@@ -50,7 +52,7 @@ navTabs.forEach(tab => {
                     
                     // Navigate to the target section
                     if (targetHref && targetHref.startsWith('#')) {
-                        // Wait a moment for content to be shown, then scroll
+                        // Wait for content to be shown, then scroll
                         setTimeout(() => {
                             const targetSection = document.querySelector(targetHref);
                             console.log('Target section found:', targetSection);
@@ -63,13 +65,17 @@ navTabs.forEach(tab => {
                                 });
                             } else {
                                 console.warn('Target section not found:', targetHref);
-                                // If target section not found, scroll to top of content area
-                                window.scrollTo({
-                                    top: 100,
-                                    behavior: 'smooth'
-                                });
+                                // Scroll to top of the active content section
+                                const activeContentSection = document.querySelector('.content-section.active');
+                                if (activeContentSection) {
+                                    const offsetTop = activeContentSection.offsetTop - 120;
+                                    window.scrollTo({
+                                        top: offsetTop,
+                                        behavior: 'smooth'
+                                    });
+                                }
                             }
-                        }, 100);
+                        }, 150);
                     }
                 }
             }

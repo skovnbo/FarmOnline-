@@ -27,6 +27,8 @@ $componentFiles = @{
     "components/management/features.html" = "<!-- MANAGEMENT_FEATURES_COMPONENT -->"
     "components/management/benefits.html" = "<!-- MANAGEMENT_BENEFITS_COMPONENT -->"
     "components/integration/sections.html" = "<!-- INTEGRATION_SECTIONS_COMPONENT -->"
+    "components/infrastructure/sections.html" = "<!-- INFRASTRUCTURE_SECTIONS_COMPONENT -->"
+    "components/applications/sections.html" = "<!-- APPLICATIONS_SECTIONS_COMPONENT -->"
     "components/analytics/hero.html" = "<!-- ANALYTICS_HERO_COMPONENT -->"
     "components/analytics/overview.html" = "<!-- ANALYTICS_OVERVIEW_COMPONENT -->"
     "components/analytics/features.html" = "<!-- ANALYTICS_FEATURES_COMPONENT -->"
@@ -49,6 +51,11 @@ $baseContent = $baseContent -replace '<script src="scripts/component-loader\.js"
 
 # Remove the loading indicator since we're embedding everything
 $baseContent = $baseContent -replace '    <!-- Loading Indicator -->\s*<div id="loading"[^>]*>.*?</div>\s*', ''
+
+# Remove content section divs since we're creating a single page
+$baseContent = $baseContent -replace '<div class="content-section"[^>]*>', ''
+$baseContent = $baseContent -replace '</div>\s*<!-- Integration Sections -->', '<!-- Integration Sections -->'
+$baseContent = $baseContent -replace '</div>\s*<!-- Shared Sections -->', '<!-- Shared Sections -->'
 
 # Ensure Lucide icons are included for navigation functionality
 if (-not ($baseContent -like "*lucide*")) {
