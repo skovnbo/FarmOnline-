@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         '<!-- MANAGEMENT_OVERVIEW_COMPONENT -->': 'components/management/overview.html',
         '<!-- MANAGEMENT_FEATURES_COMPONENT -->': 'components/management/features.html',
         '<!-- MANAGEMENT_BENEFITS_COMPONENT -->': 'components/management/benefits.html',
+        '<!-- INTEGRATION_SECTIONS_COMPONENT -->': 'components/integration/sections.html',
         '<!-- ANALYTICS_HERO_COMPONENT -->': 'components/analytics/hero.html',
         '<!-- ANALYTICS_OVERVIEW_COMPONENT -->': 'components/analytics/overview.html',
         '<!-- ANALYTICS_FEATURES_COMPONENT -->': 'components/analytics/features.html',

@@ -26,6 +26,7 @@ $componentFiles = @{
     "components/management/overview.html" = "<!-- MANAGEMENT_OVERVIEW_COMPONENT -->"
     "components/management/features.html" = "<!-- MANAGEMENT_FEATURES_COMPONENT -->"
     "components/management/benefits.html" = "<!-- MANAGEMENT_BENEFITS_COMPONENT -->"
+    "components/integration/sections.html" = "<!-- INTEGRATION_SECTIONS_COMPONENT -->"
     "components/analytics/hero.html" = "<!-- ANALYTICS_HERO_COMPONENT -->"
     "components/analytics/overview.html" = "<!-- ANALYTICS_OVERVIEW_COMPONENT -->"
     "components/analytics/features.html" = "<!-- ANALYTICS_FEATURES_COMPONENT -->"
