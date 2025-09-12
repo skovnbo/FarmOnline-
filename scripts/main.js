@@ -26,6 +26,28 @@ navTabs.forEach(tab => {
             submenu.classList.remove('active');
             if (submenu.getAttribute('data-submenu') === section) {
                 submenu.classList.add('active');
+                
+                // Navigate to the first item in the active submenu
+                const firstSubmenuLink = submenu.querySelector('.submenu-link');
+                if (firstSubmenuLink) {
+                    const targetHref = firstSubmenuLink.getAttribute('href');
+                    
+                    // Update active submenu link
+                    submenu.querySelectorAll('.submenu-link').forEach(link => link.classList.remove('active'));
+                    firstSubmenuLink.classList.add('active');
+                    
+                    // Navigate to the target section
+                    if (targetHref && targetHref.startsWith('#')) {
+                        const targetSection = document.querySelector(targetHref);
+                        if (targetSection) {
+                            const offsetTop = targetSection.offsetTop - 120; // Account for fixed navbar
+                            window.scrollTo({
+                                top: offsetTop,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                }
             }
         });
     });
