@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "serve": "python -m http.server 8080 -d dist"
+    "serve": "python -m http.server 8080 -d dist",
+    "build:github": "node scripts/build-github-pages.js",
+    "deploy": "npm run build:github && git add dist/index.html && git commit -m 'Update GitHub Pages build' && git push"
   },
   "devDependencies": {
     "vite": "^5.0.0"
