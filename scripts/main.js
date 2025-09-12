@@ -16,10 +16,21 @@ const mobileMenu = document.getElementById('mobileMenu');
 navTabs.forEach(tab => {
     tab.addEventListener('click', () => {
         const section = tab.getAttribute('data-section');
+        console.log('Navigation tab clicked:', section);
         
         // Update active tab
         navTabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
+        
+        // Show/hide content sections
+        const contentSections = document.querySelectorAll('.content-section');
+        contentSections.forEach(contentSection => {
+            if (contentSection.getAttribute('data-section') === section) {
+                contentSection.style.display = 'block';
+            } else {
+                contentSection.style.display = 'none';
+            }
+        });
         
         // Update active submenu
         submenuItems.forEach(submenu => {
@@ -31,6 +42,7 @@ navTabs.forEach(tab => {
                 const firstSubmenuLink = submenu.querySelector('.submenu-link');
                 if (firstSubmenuLink) {
                     const targetHref = firstSubmenuLink.getAttribute('href');
+                    console.log('Target href:', targetHref);
                     
                     // Update active submenu link
                     submenu.querySelectorAll('.submenu-link').forEach(link => link.classList.remove('active'));
@@ -38,14 +50,26 @@ navTabs.forEach(tab => {
                     
                     // Navigate to the target section
                     if (targetHref && targetHref.startsWith('#')) {
-                        const targetSection = document.querySelector(targetHref);
-                        if (targetSection) {
-                            const offsetTop = targetSection.offsetTop - 120; // Account for fixed navbar
-                            window.scrollTo({
-                                top: offsetTop,
-                                behavior: 'smooth'
-                            });
-                        }
+                        // Wait a moment for content to be shown, then scroll
+                        setTimeout(() => {
+                            const targetSection = document.querySelector(targetHref);
+                            console.log('Target section found:', targetSection);
+                            if (targetSection) {
+                                const offsetTop = targetSection.offsetTop - 120; // Account for fixed navbar
+                                console.log('Scrolling to:', offsetTop);
+                                window.scrollTo({
+                                    top: offsetTop,
+                                    behavior: 'smooth'
+                                });
+                            } else {
+                                console.warn('Target section not found:', targetHref);
+                                // If target section not found, scroll to top of content area
+                                window.scrollTo({
+                                    top: 100,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }, 100);
                     }
                 }
             }
