@@ -1,3 +1,58 @@
+<!--
+╔══════════════════════════════════════════════════════════════════════════════════════════════╗
+║                              FARMONLINE+ DEVELOPMENT INDEX                                  ║
+╠══════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                              ║
+║  PURPOSE: Development version with component placeholders for hot-reload development        ║
+║                                                                                              ║
+║  ARCHITECTURE:                                                                               ║
+║  • Hierarchical Single-Page Application (SPA) with content switching                        ║
+║  • Component-based modular design with HOC (Higher-Order Components)                        ║
+║  • Dynamic component loading via component-loader.js                                        ║
+║                                                                                              ║
+║  NAVIGATION STRUCTURE:                                                                       ║
+║  ┌─ Operations (data-section="operations")                                                   ║
+║  │  ├─ Farm Overview (#hero) → MANAGEMENT_HERO_COMPONENT                                     ║
+║  │  ├─ Management Overview (#overview) → MANAGEMENT_OVERVIEW_COMPONENT                      ║
+║  │  ├─ Operations Features (#features) → MANAGEMENT_FEATURES_COMPONENT                      ║
+║  │  ├─ Business Benefits (#benefits) → MANAGEMENT_BENEFITS_COMPONENT                        ║
+║  │  └─ Shared: Pricing, Contact                                                             ║
+║  │                                                                                          ║
+║  ├─ Integration (data-section="integration")                                                 ║
+║  │  ├─ Partner Connectors, BI Solutions, ERP → INTEGRATION_SECTIONS_COMPONENT               ║
+║  │  └─ Shared: Contact                                                                      ║
+║  │                                                                                          ║
+║  ├─ Infrastructure (data-section="infrastructure")                                          ║
+║  │  ├─ BlueControl Models, Global Infra, Security → INFRASTRUCTURE_SECTIONS_COMPONENT       ║
+║  │  └─ Shared: Contact                                                                      ║
+║  │                                                                                          ║
+║  └─ Applications (data-section="applications")                                              ║
+║     ├─ Mobile App, WebApps → APPLICATIONS_SECTIONS_COMPONENT                                ║
+║     └─ Shared: Contact                                                                      ║
+║                                                                                              ║
+║  COMPONENT PLACEHOLDERS:                                                                     ║
+║  • <!-- NAV_COMPONENT --> → components/navigation/nav.html                                  ║
+║  • <!-- MANAGEMENT_*_COMPONENT --> → components/management/*.html                           ║
+║  • <!-- INTEGRATION_SECTIONS_COMPONENT --> → components/integration/sections.html          ║
+║  • <!-- INFRASTRUCTURE_SECTIONS_COMPONENT --> → components/infrastructure/sections.html    ║
+║  • <!-- APPLICATIONS_SECTIONS_COMPONENT --> → components/applications/sections.html        ║
+║  • <!-- PRICING_COMPONENT --> → components/sections/pricing.html                           ║
+║  • <!-- CONTACT_COMPONENT --> → components/sections/contact.html                           ║
+║  • <!-- FOOTER_COMPONENT --> → components/footer.html                                      ║
+║                                                                                              ║
+║  BUILD PROCESS:                                                                              ║
+║  1. Development: Uses this file with dynamic component loading                               ║
+║  2. Production: deploy-github-pages.ps1 embeds components into index.html                   ║
+║                                                                                              ║
+║  DEVELOPMENT WORKFLOW:                                                                       ║
+║  1. Edit component files in components/ directory                                           ║
+║  2. Test with: npm run dev (uses this file)                                                 ║
+║  3. Deploy with: .\deploy-github-pages.ps1                                                  ║
+║                                                                                              ║
+║  ⚠️  WARNING: Never edit index.html directly - it's auto-generated!                          ║
+║                                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>

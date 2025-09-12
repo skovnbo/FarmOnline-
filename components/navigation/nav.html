@@ -1,3 +1,51 @@
+<!--
+╔══════════════════════════════════════════════════════════════════════════════════════════════╗
+║                             NAVIGATION COMPONENT (HOC)                                      ║
+╠══════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                              ║
+║  PURPOSE: Master navigation system controlling hierarchical content switching               ║
+║                                                                                              ║
+║  COMPONENT TYPE: Higher-Order Component (HOC)                                               ║
+║  • Self-contained navigation structure                                                      ║
+║  • Reusable across different layouts                                                        ║
+║  • Controls content section visibility via data attributes                                  ║
+║                                                                                              ║
+║  NAVIGATION HIERARCHY:                                                                       ║
+║  Main Tabs (data-section) → Content Sections → Submenu Items → Individual Sections         ║
+║                                                                                              ║
+║  MAIN NAVIGATION TABS:                                                                       ║
+║  • Operations (data-section="operations") - Farm management functionality                   ║
+║  • Integration (data-section="integration") - System integration features                   ║
+║  • Infrastructure (data-section="infrastructure") - Platform infrastructure                 ║
+║  • Applications (data-section="applications") - Client applications                         ║
+║                                                                                              ║
+║  SUBMENU STRUCTURE:                                                                          ║
+║  • Dynamic submenus (data-submenu) that match main tab sections                             ║
+║  • Context-aware navigation based on active main tab                                        ║
+║  • Smooth scrolling to target sections within active content area                           ║
+║                                                                                              ║
+║  RESPONSIVE DESIGN:                                                                          ║
+║  • Desktop: Horizontal navigation with dropdown submenus                                    ║
+║  • Mobile: Hamburger menu with collapsible sections                                         ║
+║                                                                                              ║
+║  JAVASCRIPT INTEGRATION:                                                                     ║
+║  • Controlled by scripts/main.js navigation system                                          ║
+║  • Event listeners on nav-tab buttons trigger content switching                             ║
+║  • Submenu links trigger smooth scrolling within active sections                            ║
+║                                                                                              ║
+║  CSS CLASSES:                                                                                ║
+║  • .nav-tab.active - Active main navigation tab styling                                     ║
+║  • .submenu-items.active - Visible submenu styling                                          ║
+║  • .nav-mobile-menu - Mobile navigation overlay                                             ║
+║                                                                                              ║
+║  ⚠️  CRITICAL DEPENDENCIES:                                                                   ║
+║  • data-section attributes must match content section data-section attributes               ║
+║  • Submenu href values must match actual section IDs in content                             ║
+║  • Lucide icons for navigation icons                                                        ║
+║                                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+-->
+
 <!-- Navigation Component -->
 <nav class="navbar">
     <div class="nav-container">

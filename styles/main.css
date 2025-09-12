@@ -1,3 +1,53 @@
+/*
+╔══════════════════════════════════════════════════════════════════════════════════════════════╗
+║                             FARMONLINE+ GLOBAL STYLESHEET                                   ║
+╠══════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                              ║
+║  PURPOSE: Comprehensive styling system for hierarchical SPA navigation                      ║
+║                                                                                              ║
+║  ARCHITECTURE:                                                                               ║
+║  1. Hierarchical Content Structure - Content section show/hide system                       ║
+║  2. Brand Variables - SKOV color palette and design tokens                                  ║
+║  3. Reset & Base Styles - Consistent foundation                                             ║
+║  4. Component Styles - Modular styling for HOCs                                             ║
+║  5. Navigation Styles - Main tabs, submenus, mobile navigation                              ║
+║  6. Layout Styles - Grid systems, containers, spacing                                       ║
+║  7. Responsive Design - Mobile-first approach                                               ║
+║                                                                                              ║
+║  HIERARCHICAL CONTENT SYSTEM:                                                                ║
+║  • .main-content → Container for all content sections                                       ║
+║  • .content-section → Individual section containers (hidden by default)                    ║
+║  • .content-section.active → Visible section with opacity transition                       ║
+║  • .shared-sections → Always visible components (pricing, contact, footer)                 ║
+║                                                                                              ║
+║  NAVIGATION STYLING:                                                                         ║
+║  • .nav-tab.active → Active main navigation tab                                             ║
+║  • .submenu-items.active → Visible submenu for active section                              ║
+║  • .nav-mobile-menu → Mobile navigation overlay                                             ║
+║                                                                                              ║
+║  COMPONENT STYLING APPROACH:                                                                 ║
+║  • Self-contained components with scoped class names                                        ║
+║  • BEM methodology for component organization                                               ║
+║  • Consistent spacing using CSS custom properties                                           ║
+║  • Responsive breakpoints for all components                                                ║
+║                                                                                              ║
+║  CSS CUSTOM PROPERTIES:                                                                      ║
+║  • Brand colors, typography, spacing, breakpoints                                          ║
+║  • Consistent design tokens across all components                                           ║
+║                                                                                              ║
+║  RESPONSIVE STRATEGY:                                                                        ║
+║  • Mobile-first design with progressive enhancement                                         ║
+║  • Fluid typography and spacing                                                             ║
+║  • Adaptive navigation for different screen sizes                                           ║
+║                                                                                              ║
+║  HOC STYLING PRINCIPLES:                                                                     ║
+║  • Each component has isolated, reusable styles                                             ║
+║  • Components can be combined without style conflicts                                       ║
+║  • Consistent visual hierarchy across all components                                        ║
+║                                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
+
 /* Main Content Hierarchical Structure */
 .main-content {
     position: relative;

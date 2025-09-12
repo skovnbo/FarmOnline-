@@ -1,3 +1,51 @@
+#
+# ╔══════════════════════════════════════════════════════════════════════════════════════════════╗
+# ║                          FARMONLINE+ GITHUB PAGES DEPLOYMENT SCRIPT                         ║
+# ╠══════════════════════════════════════════════════════════════════════════════════════════════╣
+# ║                                                                                              ║
+# ║  PURPOSE: Component embedding and production build system for GitHub Pages deployment       ║
+# ║                                                                                              ║
+# ║  PROCESS:                                                                                    ║
+# ║  1. Read index-dev.html as base template with component placeholders                        ║
+# ║  2. Load all component HTML files from components/ directory                                ║
+# ║  3. Replace comment placeholders with actual component content                              ║
+# ║  4. Generate optimized index.html for GitHub Pages                                          ║
+# ║  5. Commit and push to GitHub repository                                                    ║
+# ║                                                                                              ║
+# ║  COMPONENT EMBEDDING MAPPING:                                                                ║
+# ║  <!-- NAV_COMPONENT --> → components/navigation/nav.html                                    ║
+# ║  <!-- MANAGEMENT_*_COMPONENT --> → components/management/*.html                             ║
+# ║  <!-- INTEGRATION_SECTIONS_COMPONENT --> → components/integration/sections.html            ║
+# ║  <!-- INFRASTRUCTURE_SECTIONS_COMPONENT --> → components/infrastructure/sections.html      ║
+# ║  <!-- APPLICATIONS_SECTIONS_COMPONENT --> → components/applications/sections.html          ║
+# ║  <!-- PRICING_COMPONENT --> → components/sections/pricing.html                             ║
+# ║  <!-- CONTACT_COMPONENT --> → components/sections/contact.html                             ║
+# ║  <!-- FOOTER_COMPONENT --> → components/footer.html                                        ║
+# ║                                                                                              ║
+# ║  ADVANTAGES:                                                                                 ║
+# ║  • Single file deployment (GitHub Pages compatible)                                         ║
+# ║  • No runtime component loading overhead                                                    ║
+# ║  • All components pre-embedded for faster loading                                           ║
+# ║  • Maintains development modularity with production optimization                            ║
+# ║                                                                                              ║
+# ║  ERROR HANDLING:                                                                             ║
+# ║  • Missing components logged but don't break build                                          ║
+# ║  • Preserves placeholders for missing files                                                 ║
+# ║  • Git operations have error checking                                                       ║
+# ║                                                                                              ║
+# ║  HOC RELATIONSHIP:                                                                           ║
+# ║  • Each component file is a self-contained HOC                                              ║
+# ║  • Build process composes HOCs into final application                                       ║
+# ║  • Maintains component boundaries in final output                                           ║
+# ║                                                                                              ║
+# ║  USAGE:                                                                                      ║
+# ║  .\deploy-github-pages.ps1                                                                  ║
+# ║                                                                                              ║
+# ║  ⚠️  WARNING: This overwrites index.html - never edit index.html directly!                  ║
+# ║                                                                                              ║
+# ╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+#
+
 # GitHub Pages Deployment Script
 # This script creates a single-file version for GitHub Pages deployment
 

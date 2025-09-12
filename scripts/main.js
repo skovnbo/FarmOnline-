@@ -1,3 +1,43 @@
+/*
+╔══════════════════════════════════════════════════════════════════════════════════════════════╗
+║                           FARMONLINE+ NAVIGATION CONTROLLER                                 ║
+╠══════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                              ║
+║  PURPOSE: Hierarchical navigation system for SPA content switching                          ║
+║                                                                                              ║
+║  ARCHITECTURE:                                                                               ║
+║  • Main Navigation Tabs: Control which content section is visible                           ║
+║  • Content Sections: Container divs that show/hide based on main tab selection              ║
+║  • Submenu Navigation: Navigate within the active content section                           ║
+║  • Mobile Navigation: Responsive navigation for mobile devices                              ║
+║                                                                                              ║
+║  CONTENT SWITCHING LOGIC:                                                                    ║
+║  1. Main Tab Click → Hide all content sections → Show target section                        ║
+║  2. Update submenu visibility based on active section                                       ║
+║  3. Submenu Link Click → Smooth scroll to target within active section                      ║
+║                                                                                              ║
+║  DATA ATTRIBUTES:                                                                            ║
+║  • data-section="operations|integration|infrastructure|applications"                        ║
+║  • data-submenu="operations|integration|infrastructure|applications"                        ║
+║                                                                                              ║
+║  CSS CLASSES:                                                                                ║
+║  • .nav-tab.active → Active main navigation tab                                             ║
+║  • .content-section.active → Visible content section                                        ║
+║  • .submenu-items.active → Visible submenu                                                  ║
+║                                                                                              ║
+║  HIERARCHICAL STRUCTURE:                                                                     ║
+║  Main Tabs → Content Sections → Individual Sections (with smooth scroll)                    ║
+║                                                                                              ║
+║  DEPENDENCIES:                                                                               ║
+║  • Lucide Icons: Icon rendering system                                                      ║
+║  • DOM Elements: Navigation tabs, content sections, submenu items                           ║
+║  • CSS Classes: Content visibility and active states                                        ║
+║                                                                                              ║
+║  ⚠️  CRITICAL: Ensure data-section attributes match between navigation and content!          ║
+║                                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
+
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
 

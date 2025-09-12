@@ -1,3 +1,49 @@
+/*
+╔══════════════════════════════════════════════════════════════════════════════════════════════╗
+║                           FARMONLINE+ COMPONENT LOADER                                      ║
+╠══════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                              ║
+║  PURPOSE: Development-time dynamic component loading system                                  ║
+║                                                                                              ║
+║  FUNCTIONALITY:                                                                              ║
+║  • Loads HTML components dynamically via fetch() API                                        ║
+║  • Replaces comment placeholders with actual component content                              ║
+║  • Enables hot-reload development without build process                                      ║
+║  • Used only in development (index-dev.html)                                                ║
+║                                                                                              ║
+║  COMPONENT MAPPING:                                                                          ║
+║  Placeholder Comment → Component File Path                                                   ║
+║  • <!-- NAV_COMPONENT --> → components/navigation/nav.html                                  ║
+║  • <!-- MANAGEMENT_*_COMPONENT --> → components/management/*.html                           ║
+║  • <!-- INTEGRATION_SECTIONS_COMPONENT --> → components/integration/sections.html          ║
+║  • <!-- INFRASTRUCTURE_SECTIONS_COMPONENT --> → components/infrastructure/sections.html    ║
+║  • <!-- APPLICATIONS_SECTIONS_COMPONENT --> → components/applications/sections.html        ║
+║  • <!-- PRICING_COMPONENT --> → components/sections/pricing.html                           ║
+║  • <!-- CONTACT_COMPONENT --> → components/sections/contact.html                           ║
+║  • <!-- FOOTER_COMPONENT --> → components/footer.html                                      ║
+║                                                                                              ║
+║  LOAD PROCESS:                                                                               ║
+║  1. DOM Content Loaded → Scan for comment placeholders                                      ║
+║  2. Fetch component HTML files                                                              ║
+║  3. Replace placeholders with loaded content                                                ║
+║  4. Initialize navigation and icons                                                         ║
+║                                                                                              ║
+║  ERROR HANDLING:                                                                             ║
+║  • 404 errors logged but don't break loading process                                        ║
+║  • Failed components show placeholder retention                                             ║
+║                                                                                              ║
+║  RELATIONSHIP TO HOCs:                                                                       ║
+║  • Each component file is a Higher-Order Component (HOC)                                    ║
+║  • Components are self-contained and composable                                             ║
+║  • Can be combined in different ways without modification                                   ║
+║                                                                                              ║
+║  PRODUCTION NOTE:                                                                            ║
+║  • Not used in production (index.html)                                                      ║
+║  • Production uses pre-built components via deploy script                                   ║
+║                                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+*/
+
 // Component Loader for Development
 document.addEventListener('DOMContentLoaded', async function() {
     console.log('Loading components...');
