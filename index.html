@@ -1,0 +1,653 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmOnline+ - Smart Farming Solutions</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <!-- Loading Indicator -->
+    <div id="loading" style="padding: 20px; text-align: center; background: #f8fafc;">
+        <h2 style="color: #0066cc;">Loading FarmOnline+...</h2>
+        <p>Components are being loaded...</p>
+    </div>
+
+    <!-- Navigation Component -->
+    <!-- Navigation Component -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <img src="./assets/skov-logo.svg" alt="SKOV" class="logo">
+            <span class="brand">FarmOnline+</span>
+        </div>
+        
+        <!-- Main Navigation Tabs -->
+        <div class="nav-main-tabs">
+            <button class="nav-tab active" data-section="operations">
+                <i data-lucide="home"></i>
+                Operations
+            </button>
+            <button class="nav-tab" data-section="integration">
+                <i data-lucide="code"></i>
+                Integration
+            </button>
+            <button class="nav-tab" data-section="infrastructure">
+                <i data-lucide="server"></i>
+                Infrastructure
+            </button>
+            <button class="nav-tab" data-section="applications">
+                <i data-lucide="smartphone"></i>
+                Applications
+            </button>
+        </div>
+        
+        <!-- Actions -->
+        <div class="nav-actions">
+            <span class="app-version">v<span id="app-version">1.0.0</span></span>
+            <button class="btn-secondary">Request Demo</button>
+            <button class="btn-primary">Start Trial</button>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Dynamic Submenu -->
+    <div class="nav-submenu">
+        <div class="submenu-container">
+            <!-- Operations Submenu -->
+            <ul class="submenu-items active" data-submenu="operations">
+                <li><a href="#hero" class="submenu-link active">Farm Overview</a></li>
+                <li><a href="#features" class="submenu-link">Operations Features</a></li>
+                <li><a href="#solutions" class="submenu-link">Operations Solutions</a></li>
+                <li><a href="#success-stories" class="submenu-link">Success Stories</a></li>
+                <li><a href="#pricing" class="submenu-link">Pricing</a></li>
+                <li><a href="#contact" class="submenu-link">Contact</a></li>
+            </ul>
+            
+            <!-- Integration Submenu -->
+            <ul class="submenu-items" data-submenu="integration">
+                <li><a href="#partner-connectors" class="submenu-link active">Partner Connectors</a></li>
+                <li><a href="#bi-solutions" class="submenu-link">BI Solutions & Excel</a></li>
+                <li><a href="#erp-integration" class="submenu-link">ERP Integration</a></li>
+                <li><a href="#contact" class="submenu-link">Contact</a></li>
+            </ul>
+            
+            <!-- Infrastructure Submenu -->
+            <ul class="submenu-items" data-submenu="infrastructure">
+                <li><a href="#bluecontrol-models" class="submenu-link active">BlueControl Models</a></li>
+                <li><a href="#global-infrastructure" class="submenu-link">Global Infrastructure</a></li>
+                <li><a href="#data-security" class="submenu-link">Data Security</a></li>
+                <li><a href="#infrastructure" class="submenu-link">Performance & Compliance</a></li>
+                <li><a href="#contact" class="submenu-link">Contact</a></li>
+            </ul>
+            
+            <!-- Applications Submenu -->
+            <ul class="submenu-items" data-submenu="applications">
+                <li><a href="#mobile-app" class="submenu-link active">Mobile App</a></li>
+                <li><a href="#survey-webapp" class="submenu-link">Survey WebApp</a></li>
+                <li><a href="#boards-webapp" class="submenu-link">Boards WebApp</a></li>
+                <li><a href="#silo-webapp" class="submenu-link">Silo WebApp</a></li>
+                <li><a href="#reference-webapp" class="submenu-link">Reference WebApp</a></li>
+                <li><a href="#alarm-webapp" class="submenu-link">Alarm WebApp</a></li>
+                <li><a href="#analytics-webapp" class="submenu-link">Analytics WebApp</a></li>
+                <li><a href="#contact" class="submenu-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="nav-mobile-menu" id="mobileMenu">
+        <div class="mobile-section">
+            <div class="mobile-section-title">
+                <i data-lucide="home"></i>
+                Operations
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#hero" class="submenu-link">Farm Overview</a></li>
+                <li><a href="#features" class="submenu-link">Operations Features</a></li>
+                <li><a href="#solutions" class="submenu-link">Operations Solutions</a></li>
+                <li><a href="#success-stories" class="submenu-link">Success Stories</a></li>
+                <li><a href="#pricing" class="submenu-link">Pricing</a></li>
+                <li><a href="#contact" class="submenu-link">Contact</a></li>
+            </ul>
+        </div>
+        <div class="mobile-section">
+            <div class="mobile-section-title">
+                <i data-lucide="code"></i>
+                Integration
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#partner-connectors" class="submenu-link active">Partner Connectors</a></li>
+                <li><a href="#bi-solutions" class="submenu-link">BI Solutions & Excel</a></li>
+                <li><a href="#erp-integration" class="submenu-link">ERP Integration</a></li>
+                <li><a href="#contact" class="submenu-link">Contact</a></li>
+            </ul>
+        </div>
+        <div class="mobile-section">
+            <div class="mobile-section-title">
+                <i data-lucide="server"></i>
+                Infrastructure
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#bluecontrol-models" class="submenu-link">BlueControl Models</a></li>
+                <li><a href="#global-infrastructure" class="submenu-link">Global Infrastructure</a></li>
+                <li><a href="#data-security" class="submenu-link">Data Security</a></li>
+                <li><a href="#infrastructure" class="submenu-link">Performance & Compliance</a></li>
+                <li><a href="#contact" class="submenu-link">Contact</a></li>
+            </ul>
+        </div>
+        <div class="mobile-section">
+            <div class="mobile-section-title">
+                <i data-lucide="smartphone"></i>
+                Applications
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#mobile-app" class="submenu-link">Mobile App</a></li>
+                <li><a href="#survey-webapp" class="submenu-link">Survey WebApp</a></li>
+                <li><a href="#boards-webapp" class="submenu-link">Boards WebApp</a></li>
+                <li><a href="#silo-webapp" class="submenu-link">Silo WebApp</a></li>
+                <li><a href="#reference-webapp" class="submenu-link">Reference WebApp</a></li>
+                <li><a href="#alarm-webapp" class="submenu-link">Alarm WebApp</a></li>
+                <li><a href="#analytics-webapp" class="submenu-link">Analytics WebApp</a></li>
+                <li><a href="#contact" class="submenu-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- Hero Section -->
+    <!-- Hero Section Component -->
+<section id="hero" class="hero">
+    <div class="hero-background">
+        <div class="hero-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Transform Your Farm with 
+                    <span class="gradient-text">Results-Driven Intelligence</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Harness real-time data to solve farm challenges, optimize production, and enhance animal welfare 
+                    with FarmOnline+ cloud-based system tailored to reach your business objectives.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">15%</span>
+                        <span class="stat-label">Energy Cost Reduction</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">12%</span>
+                        <span class="stat-label">Feed Waste Reduction</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Remote Monitoring</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn-primary btn-large">
+                        <i data-lucide="play-circle"></i>
+                        Request Demo
+                    </button>
+                    <button class="btn-secondary btn-large">
+                        <i data-lucide="download"></i>
+                        Start Free Trial
+                    </button>
+                </div>
+                <p class="hero-note">
+                    <i data-lucide="shield-check"></i>
+                    No credit card required â€¢ 30-day free trial â€¢ Cancel anytime
+                </p>
+            </div>
+            <div class="hero-visual">
+                <div class="dashboard-preview">
+                    <div class="dashboard-header">
+                        <div class="dashboard-tabs">
+                            <span class="tab active">Dashboard</span>
+                            <span class="tab">Analytics</span>
+                            <span class="tab">Alerts</span>
+                        </div>
+                    </div>
+                    <div class="dashboard-content">
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-icon green">
+                                    <i data-lucide="thermometer"></i>
+                                </div>
+                                <div class="metric-info">
+                                    <span class="metric-value">22.3Â°C</span>
+                                    <span class="metric-label">Temperature</span>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon blue">
+                                    <i data-lucide="droplets"></i>
+                                </div>
+                                <div class="metric-info">
+                                    <span class="metric-value">65%</span>
+                                    <span class="metric-label">Humidity</span>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon orange">
+                                    <i data-lucide="zap"></i>
+                                </div>
+                                <div class="metric-info">
+                                    <span class="metric-value">2.1kW</span>
+                                    <span class="metric-label">Power</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Management Overview -->
+    <!-- Management Overview Section -->
+<section id="overview" class="overview-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Complete Farm Management Solution</h2>
+            <p class="section-subtitle">
+                Streamline your operations with our comprehensive platform designed for modern agriculture
+            </p>
+        </div>
+        <div class="overview-grid">
+            <div class="overview-item">
+                <div class="overview-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Real-Time Monitoring</h3>
+                <p>Track vital farm metrics 24/7 with our advanced sensor network and data analytics platform.</p>
+            </div>
+            <div class="overview-item">
+                <div class="overview-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Mobile Access</h3>
+                <p>Access your farm data anywhere, anytime with our responsive mobile application.</p>
+            </div>
+            <div class="overview-item">
+                <div class="overview-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3>Cloud-Based</h3>
+                <p>Secure, scalable cloud infrastructure ensures your data is always available and protected.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Management Features -->
+    <!-- Features Section Component -->
+<section id="features" class="features">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Why Choose FarmOnline+?</h2>
+            <p class="section-subtitle">
+                Unlike competitors, FarmOnline+ combines hardware reliability with advanced data-driven insights. 
+                This dual strength makes SKOV the complete ecosystem provider.
+            </p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i data-lucide="brain"></i>
+                </div>
+                <h3>Data-Driven Insights</h3>
+                <p>Real-time analytics identify feed, water, or climate issues for immediate action with trend warnings and actionable insights.</p>
+                <a href="#" class="feature-link">Learn more <i data-lucide="arrow-right"></i></a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i data-lucide="cloud"></i>
+                </div>
+                <h3>Accessible from Anywhere</h3>
+                <p>Cloud-based platform with web and mobile app access, enabling oversight from house to enterprise level.</p>
+                <a href="#" class="feature-link">Learn more <i data-lucide="arrow-right"></i></a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i data-lucide="target"></i>
+                </div>
+                <h3>Problem-Solution Focus</h3>
+                <p>Tools like the Boards app and Survey module address specific farm challenges, such as climate deviations or production inefficiencies.</p>
+                <a href="#" class="feature-link">Learn more <i data-lucide="arrow-right"></i></a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i data-lucide="globe"></i>
+                </div>
+                <h3>Regional Customization</h3>
+                <p>Tailored content and support for regional farming practices and languages across Europe, North America, Asia, and South America.</p>
+                <a href="#" class="feature-link">Learn more <i data-lucide="arrow-right"></i></a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i data-lucide="users"></i>
+                </div>
+                <h3>Key Account Integration</h3>
+                <p>Personalized dashboards and live quotation system integration for high-value clients.</p>
+                <a href="#" class="feature-link">Learn more <i data-lucide="arrow-right"></i></a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i data-lucide="heart"></i>
+                </div>
+                <h3>Animal Welfare & Efficiency</h3>
+                <p>Optimize resources while prioritizing sustainable, welfare-focused production.</p>
+                <a href="#" class="feature-link">Learn more <i data-lucide="arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Management Benefits -->
+    <!-- Management Benefits Section -->
+<section id="benefits" class="benefits-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Why Choose FarmOnline+?</h2>
+            <p class="section-subtitle">
+                Experience the difference with our proven farm management platform
+            </p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <div class="benefit-number">01</div>
+                <h3>Increased Productivity</h3>
+                <p>Optimize your farm operations and boost yields with data-driven insights and automated processes.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-number">02</div>
+                <h3>Cost Reduction</h3>
+                <p>Reduce operational costs through efficient resource management and predictive maintenance.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-number">03</div>
+                <h3>Better Decision Making</h3>
+                <p>Make informed decisions with comprehensive analytics and real-time data visualization.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-number">04</div>
+                <h3>Enhanced Animal Welfare</h3>
+                <p>Monitor animal health and behavior patterns to ensure optimal welfare and productivity.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Pricing Section -->
+    <!-- Pricing Section Component -->
+<section id="pricing" class="pricing">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Transparent Subscription Pricing</h2>
+            <p class="section-subtitle">
+                Choose the perfect plan for your farming operation. All plans include continuous delivery, security monitoring, and actionable insights.
+            </p>
+        </div>
+
+        <div class="pricing-toggle">
+            <span>Monthly</span>
+            <label class="toggle">
+                <input type="checkbox" id="pricing-annual">
+                <span class="slider"></span>
+            </label>
+            <span>Annual <span class="discount">Save 20%</span></span>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card basic">
+                <div class="plan-header">
+                    <h3>Basic</h3>
+                    <p>Perfect for single farm operations</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">â‚¬</span>
+                    <span class="amount monthly">99</span>
+                    <span class="amount annual" style="display: none;">79</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i data-lucide="check"></i>Up to 5 monitoring points</li>
+                    <li><i data-lucide="check"></i>Basic climate control</li>
+                    <li><i data-lucide="check"></i>Mobile app access</li>
+                    <li><i data-lucide="check"></i>Email alerts</li>
+                    <li><i data-lucide="check"></i>Standard support</li>
+                </ul>
+                <button class="btn-plan">Start Basic Plan</button>
+            </div>
+
+            <div class="pricing-card professional featured">
+                <div class="plan-badge">Most Popular</div>
+                <div class="plan-header">
+                    <h3>Professional</h3>
+                    <p>Advanced features for growing farms</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">â‚¬</span>
+                    <span class="amount monthly">199</span>
+                    <span class="amount annual" style="display: none;">159</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i data-lucide="check"></i>Up to 25 monitoring points</li>
+                    <li><i data-lucide="check"></i>Advanced analytics & trends</li>
+                    <li><i data-lucide="check"></i>Custom dashboards</li>
+                    <li><i data-lucide="check"></i>Multi-channel alerts</li>
+                    <li><i data-lucide="check"></i>Priority support</li>
+                    <li><i data-lucide="check"></i>Integration APIs</li>
+                </ul>
+                <button class="btn-plan">Start Professional Plan</button>
+            </div>
+
+            <div class="pricing-card enterprise">
+                <div class="plan-header">
+                    <h3>Enterprise</h3>
+                    <p>Complete solution for large operations</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">â‚¬</span>
+                    <span class="amount monthly">399</span>
+                    <span class="amount annual" style="display: none;">319</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i data-lucide="check"></i>Unlimited monitoring points</li>
+                    <li><i data-lucide="check"></i>AI-powered insights</li>
+                    <li><i data-lucide="check"></i>Multi-site management</li>
+                    <li><i data-lucide="check"></i>Advanced automation</li>
+                    <li><i data-lucide="check"></i>24/7 dedicated support</li>
+                    <li><i data-lucide="check"></i>Custom integrations</li>
+                    <li><i data-lucide="check"></i>Training & consulting</li>
+                </ul>
+                <button class="btn-plan">Contact Sales</button>
+            </div>
+        </div>
+
+        <div class="pricing-footer">
+            <p><i data-lucide="shield-check"></i> All plans include 30-day free trial â€¢ No setup fees â€¢ Cancel anytime</p>
+            <p><i data-lucide="headphones"></i> Need help choosing? <a href="#contact">Contact our experts</a></p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <!-- Contact Section Component -->
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Ready to Transform Your Farm?</h2>
+                <p>Join thousands of farmers worldwide who are already using FarmOnline+ to optimize their operations, reduce costs, and improve animal welfare.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i data-lucide="phone"></i>
+                        <div>
+                            <h4>Call Sales</h4>
+                            <p>+45 87 23 33 00</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i data-lucide="mail"></i>
+                        <div>
+                            <h4>Email Support</h4>
+                            <p>farmonline@skov.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i data-lucide="map-pin"></i>
+                        <div>
+                            <h4>Visit Us</h4>
+                            <p>Hedelundsvej 60, 8381 Tilst, Denmark</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-link"><i data-lucide="linkedin"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="twitter"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="facebook"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form class="demo-form">
+                    <h3>Request a Personalized Demo</h3>
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Full Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="company" required>
+                        <label for="company">Company/Farm Name</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="farm-type" required>
+                            <option value="">Select Farm Type</option>
+                            <option value="poultry">Poultry</option>
+                            <option value="pig">Pig</option>
+                            <option value="mixed">Mixed</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="farm-size" required>
+                        <label for="farm-size">Number of Animals</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="4"></textarea>
+                        <label for="message">Tell us about your specific needs</label>
+                    </div>
+                    <button type="submit" class="btn-primary btn-full">Request Demo</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer Component -->
+    <!-- Footer Component -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="./assets/skov-logo.svg" alt="SKOV" class="logo">
+                    <span class="brand">FarmOnline+</span>
+                </div>
+                <p>The world's leading data-driven farm management platform, helping farmers optimize operations and improve animal welfare.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#">Mobile App</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><a href="#">Poultry Farming</a></li>
+                    <li><a href="#">Pig Farming</a></li>
+                    <li><a href="#">Climate Control</a></li>
+                    <li><a href="#">Feed Management</a></li>
+                    <li><a href="#">Energy Optimization</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Webinars</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About SKOV</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 SKOV A/S. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script src="scripts/main.js"></script>
+</body>
+</html>
+
