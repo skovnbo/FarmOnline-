@@ -1,5 +1,10 @@
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+
 // Initialize Lucide Icons
-lucide.createIcons();
+if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+}
 
 // Dynamic Navigation System
 const navTabs = document.querySelectorAll('.nav-tab');
@@ -468,3 +473,5 @@ window.addEventListener('resize', throttle(() => {
 }, 250));
 
 console.log('FarmOnline+ Marketing Website - JavaScript Loaded Successfully!');
+
+}); // End of DOMContentLoaded
