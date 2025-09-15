@@ -1,0 +1,1938 @@
+﻿<!--
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â•‘                              FARMONLINE+ DEVELOPMENT INDEX                                  â•‘
+â• â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•£
+â•‘                                                                                              â•‘
+â•‘  PURPOSE: Development version with component placeholders for hot-reload development        â•‘
+â•‘                                                                                              â•‘
+â•‘  ARCHITECTURE:                                                                               â•‘
+â•‘  â€¢ Hierarchical Single-Page Application (SPA) with content switching                        â•‘
+â•‘  â€¢ Component-based modular design with HOC (Higher-Order Components)                        â•‘
+â•‘  â€¢ Dynamic component loading via component-loader.js                                        â•‘
+â•‘                                                                                              â•‘
+â•‘  NAVIGATION STRUCTURE:                                                                       â•‘
+â•‘  â”Œâ”€ Operations (data-section="operations")                                                   â•‘
+â•‘  â”‚  â”œâ”€ Farm Overview (#hero) â†’ MANAGEMENT_HERO_COMPONENT                                     â•‘
+â•‘  â”‚  â”œâ”€ Management Overview (#overview) â†’ MANAGEMENT_OVERVIEW_COMPONENT                      â•‘
+â•‘  â”‚  â”œâ”€ Operations Features (#features) â†’ MANAGEMENT_FEATURES_COMPONENT                      â•‘
+â•‘  â”‚  â”œâ”€ Business Benefits (#benefits) â†’ MANAGEMENT_BENEFITS_COMPONENT                        â•‘
+â•‘  â”‚  â””â”€ Shared: Pricing, Contact                                                             â•‘
+â•‘  â”‚                                                                                          â•‘
+â•‘  â”œâ”€ Integration (data-section="integration")                                                 â•‘
+â•‘  â”‚  â”œâ”€ Partner Connectors, BI Solutions, ERP â†’ INTEGRATION_SECTIONS_COMPONENT               â•‘
+â•‘  â”‚  â””â”€ Shared: Contact                                                                      â•‘
+â•‘  â”‚                                                                                          â•‘
+â•‘  â”œâ”€ Infrastructure (data-section="infrastructure")                                          â•‘
+â•‘  â”‚  â”œâ”€ BlueControl Models, Global Infra, Security â†’ INFRASTRUCTURE_SECTIONS_COMPONENT       â•‘
+â•‘  â”‚  â””â”€ Shared: Contact                                                                      â•‘
+â•‘  â”‚                                                                                          â•‘
+â•‘  â””â”€ Applications (data-section="applications")                                              â•‘
+â•‘     â”œâ”€ Mobile App, WebApps â†’ APPLICATIONS_SECTIONS_COMPONENT                                â•‘
+â•‘     â””â”€ Shared: Contact                                                                      â•‘
+â•‘                                                                                              â•‘
+â•‘  COMPONENT PLACEHOLDERS:                                                                     â•‘
+â•‘  â€¢ NAV_COMPONENT â†’ components/navigation/nav.html                                           â•‘
+â•‘  â€¢ MANAGEMENT_*_COMPONENT â†’ components/management/*.html                                    â•‘
+â•‘  â€¢ INTEGRATION_SECTIONS_COMPONENT â†’ components/integration/sections.html                   â•‘
+â•‘  â€¢ INTEGRATION_PRICING_COMPONENT â†’ components/integration/pricing.html                     â•‘
+â•‘  â€¢ INTEGRATION_CONTACT_COMPONENT â†’ components/integration/contact.html                     â•‘
+â•‘  â€¢ INFRASTRUCTURE_SECTIONS_COMPONENT â†’ components/infrastructure/sections.html             â•‘
+â•‘  â€¢ INFRASTRUCTURE_PRICING_COMPONENT â†’ components/infrastructure/pricing.html               â•‘
+â•‘  â€¢ INFRASTRUCTURE_CONTACT_COMPONENT â†’ components/infrastructure/contact.html               â•‘
+â•‘  â€¢ APPLICATIONS_SECTIONS_COMPONENT â†’ components/applications/sections.html                 â•‘
+â•‘  â€¢ APPLICATIONS_PRICING_COMPONENT â†’ components/applications/pricing.html                   â•‘
+â•‘  â€¢ APPLICATIONS_CONTACT_COMPONENT â†’ components/applications/contact.html                   â•‘
+â•‘  â€¢ FOOTER_COMPONENT â†’ components/footer.html                                                â•‘
+â•‘                                                                                              â•‘
+â•‘  BUILD PROCESS:                                                                              â•‘
+â•‘  1. Development: Uses this file with dynamic component loading                               â•‘
+â•‘  2. Production: deploy-github-pages.ps1 embeds components into index.html                   â•‘
+â•‘                                                                                              â•‘
+â•‘  DEVELOPMENT WORKFLOW:                                                                       â•‘
+â•‘  1. Edit component files in components/ directory                                           â•‘
+â•‘  2. Test with: npm run dev (uses this file)                                                 â•‘
+â•‘  3. Deploy with: .\deploy-github-pages.ps1                                                  â•‘
+â•‘                                                                                              â•‘
+â•‘  âš ï¸  WARNING: Never edit index.html directly - it's auto-generated!                          â•‘
+â•‘                                                                                              â•‘
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmOnline+ - Smart Farming Solutions</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <!-- Loading Indicator -->
+    <div id="loading" style="padding: 20px; text-align: center; background: #f8fafc;">
+        <h2 style="color: #0066cc;">Loading FarmOnline+...</h2>
+        <p>Components are being loaded...</p>
+    </div>
+
+    <!-- Navigation Component -->
+    <!--
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â•‘                             NAVIGATION COMPONENT (HOC)                                      â•‘
+â• â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•£
+â•‘                                                                                              â•‘
+â•‘  PURPOSE: Master navigation system controlling hierarchical content switching               â•‘
+â•‘                                                                                              â•‘
+â•‘  COMPONENT TYPE: Higher-Order Component (HOC)                                               â•‘
+â•‘  â€¢ Self-contained navigation structure                                                      â•‘
+â•‘  â€¢ Reusable across different layouts                                                        â•‘
+â•‘  â€¢ Controls content section visibility via data attributes                                  â•‘
+â•‘                                                                                              â•‘
+â•‘  NAVIGATION HIERARCHY:                                                                       â•‘
+â•‘  Main Tabs (data-section) â†’ Content Sections â†’ Submenu Items â†’ Individual Sections         â•‘
+â•‘                                                                                              â•‘
+â•‘  MAIN NAVIGATION TABS:                                                                       â•‘
+â•‘  â€¢ Operations (data-section="operations") - Farm management functionality                   â•‘
+â•‘  â€¢ Integration (data-section="integration") - System integration features                   â•‘
+â•‘  â€¢ Infrastructure (data-section="infrastructure") - Platform infrastructure                 â•‘
+â•‘  â€¢ Applications (data-section="applications") - Client applications                         â•‘
+â•‘                                                                                              â•‘
+â•‘  SUBMENU STRUCTURE:                                                                          â•‘
+â•‘  â€¢ Dynamic submenus (data-submenu) that match main tab sections                             â•‘
+â•‘  â€¢ Context-aware navigation based on active main tab                                        â•‘
+â•‘  â€¢ Smooth scrolling to target sections within active content area                           â•‘
+â•‘                                                                                              â•‘
+â•‘  RESPONSIVE DESIGN:                                                                          â•‘
+â•‘  â€¢ Desktop: Horizontal navigation with dropdown submenus                                    â•‘
+â•‘  â€¢ Mobile: Hamburger menu with collapsible sections                                         â•‘
+â•‘                                                                                              â•‘
+â•‘  JAVASCRIPT INTEGRATION:                                                                     â•‘
+â•‘  â€¢ Controlled by scripts/main.js navigation system                                          â•‘
+â•‘  â€¢ Event listeners on nav-tab buttons trigger content switching                             â•‘
+â•‘  â€¢ Submenu links trigger smooth scrolling within active sections                            â•‘
+â•‘                                                                                              â•‘
+â•‘  CSS CLASSES:                                                                                â•‘
+â•‘  â€¢ .nav-tab.active - Active main navigation tab styling                                     â•‘
+â•‘  â€¢ .submenu-items.active - Visible submenu styling                                          â•‘
+â•‘  â€¢ .nav-mobile-menu - Mobile navigation overlay                                             â•‘
+â•‘                                                                                              â•‘
+â•‘  âš ï¸  CRITICAL DEPENDENCIES:                                                                   â•‘
+â•‘  â€¢ data-section attributes must match content section data-section attributes               â•‘
+â•‘  â€¢ Submenu href values must match actual section IDs in content                             â•‘
+â•‘  â€¢ Lucide icons for navigation icons                                                        â•‘
+â•‘                                                                                              â•‘
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+-->
+
+<!-- Navigation Component -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <img src="./assets/skov-logo.svg" alt="SKOV" class="logo">
+            <span class="brand">FarmOnline+</span>
+        </div>
+        
+        <!-- Main Navigation Tabs -->
+        <div class="nav-main-tabs">
+            <button class="nav-tab active" data-section="operations">
+                <i data-lucide="home"></i>
+                Operations
+            </button>
+            <button class="nav-tab" data-section="integration">
+                <i data-lucide="code"></i>
+                Integration
+            </button>
+            <button class="nav-tab" data-section="infrastructure">
+                <i data-lucide="server"></i>
+                Infrastructure
+            </button>
+            <button class="nav-tab" data-section="applications">
+                <i data-lucide="smartphone"></i>
+                Applications
+            </button>
+        </div>
+        
+        <!-- Actions -->
+        <div class="nav-actions">
+            <span class="app-version">v<span id="app-version">1.0.0</span></span>
+            <button class="btn-secondary">Request Demo</button>
+            <button class="btn-primary">Start Trial</button>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Dynamic Submenu -->
+    <div class="nav-submenu">
+        <div class="submenu-container">
+            <!-- Operations Submenu -->
+            <ul class="submenu-items active" data-submenu="operations">
+                <li><a href="#hero" class="submenu-link active">Farm Overview</a></li>
+                <li><a href="#overview" class="submenu-link">Management Overview</a></li>
+                <li><a href="#features" class="submenu-link">Operations Features</a></li>
+                <li><a href="#solutions" class="submenu-link">Solutions</a></li>
+                <li><a href="#benefits" class="submenu-link">Business Benefits</a></li>
+                <li><a href="#operations-pricing" class="submenu-link">Pricing</a></li>
+                <li><a href="#operations-contact" class="submenu-link">Contact</a></li>
+            </ul>
+            
+            <!-- Integration Submenu -->
+            <ul class="submenu-items" data-submenu="integration">
+                <li><a href="#partner-connectors" class="submenu-link active">Partner Connectors</a></li>
+                <li><a href="#bi-solutions" class="submenu-link">BI Solutions & Excel</a></li>
+                <li><a href="#erp-integration" class="submenu-link">ERP Integration</a></li>
+                <li><a href="#integration-pricing" class="submenu-link">Pricing</a></li>
+                <li><a href="#integration-contact" class="submenu-link">Contact</a></li>
+            </ul>
+            
+            <!-- Infrastructure Submenu -->
+            <ul class="submenu-items" data-submenu="infrastructure">
+                <li><a href="#bluecontrol-models" class="submenu-link active">BlueControl Models</a></li>
+                <li><a href="#global-infrastructure" class="submenu-link">Global Infrastructure</a></li>
+                <li><a href="#data-security" class="submenu-link">Data Security</a></li>
+                <li><a href="#infrastructure" class="submenu-link">Performance & Compliance</a></li>
+                <li><a href="#infrastructure-pricing" class="submenu-link">Pricing</a></li>
+                <li><a href="#infrastructure-contact" class="submenu-link">Contact</a></li>
+            </ul>
+            
+            <!-- Applications Submenu -->
+            <ul class="submenu-items" data-submenu="applications">
+                <li><a href="#mobile-app" class="submenu-link active">Mobile App</a></li>
+                <li><a href="#survey-webapp" class="submenu-link">Survey WebApp</a></li>
+                <li><a href="#boards-webapp" class="submenu-link">Boards WebApp</a></li>
+                <li><a href="#analytics-webapp" class="submenu-link">Analytics WebApp</a></li>
+                <li><a href="#applications-pricing" class="submenu-link">Pricing</a></li>
+                <li><a href="#applications-contact" class="submenu-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="nav-mobile-menu" id="mobileMenu">
+        <div class="mobile-section">
+            <div class="mobile-section-title">
+                <i data-lucide="home"></i>
+                Operations
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#hero" class="submenu-link">Farm Overview</a></li>
+                <li><a href="#overview" class="submenu-link">Management Overview</a></li>
+                <li><a href="#features" class="submenu-link">Operations Features</a></li>
+                <li><a href="#solutions" class="submenu-link">Solutions</a></li>
+                <li><a href="#benefits" class="submenu-link">Business Benefits</a></li>
+                <li><a href="#operations-pricing" class="submenu-link">Pricing</a></li>
+                <li><a href="#operations-contact" class="submenu-link">Contact</a></li>
+            </ul>
+        </div>
+        <div class="mobile-section">
+            <div class="mobile-section-title">
+                <i data-lucide="code"></i>
+                Integration
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#partner-connectors" class="submenu-link active">Partner Connectors</a></li>
+                <li><a href="#bi-solutions" class="submenu-link">BI Solutions & Excel</a></li>
+                <li><a href="#erp-integration" class="submenu-link">ERP Integration</a></li>
+                <li><a href="#integration-pricing" class="submenu-link">Pricing</a></li>
+                <li><a href="#integration-contact" class="submenu-link">Contact</a></li>
+            </ul>
+        </div>
+        <div class="mobile-section">
+            <div class="mobile-section-title">
+                <i data-lucide="server"></i>
+                Infrastructure
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#bluecontrol-models" class="submenu-link">BlueControl Models</a></li>
+                <li><a href="#global-infrastructure" class="submenu-link">Global Infrastructure</a></li>
+                <li><a href="#data-security" class="submenu-link">Data Security</a></li>
+                <li><a href="#infrastructure" class="submenu-link">Performance & Compliance</a></li>
+                <li><a href="#infrastructure-pricing" class="submenu-link">Pricing</a></li>
+                <li><a href="#infrastructure-contact" class="submenu-link">Contact</a></li>
+            </ul>
+        </div>
+        <div class="mobile-section">
+            <div class="mobile-section-title">
+                <i data-lucide="smartphone"></i>
+                Applications
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#mobile-app" class="submenu-link">Mobile App</a></li>
+                <li><a href="#survey-webapp" class="submenu-link">Survey WebApp</a></li>
+                <li><a href="#boards-webapp" class="submenu-link">Boards WebApp</a></li>
+                <li><a href="#analytics-webapp" class="submenu-link">Analytics WebApp</a></li>
+                <li><a href="#applications-pricing" class="submenu-link">Pricing</a></li>
+                <li><a href="#applications-contact" class="submenu-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        
+        <!-- Operations Content Section -->
+        <div class="content-section active" data-section="operations">
+            <!--
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â•‘                              OPERATIONS HERO COMPONENT (HOC)                                â•‘
+â• â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•£
+â•‘                                                                                              â•‘
+â•‘  PURPOSE: Primary landing section for Operations main navigation tab                        â•‘
+â•‘                                                                                              â•‘
+â•‘  COMPONENT TYPE: Higher-Order Component (HOC)                                               â•‘
+â•‘  â€¢ Self-contained hero section with branding and value proposition                          â•‘
+â•‘  â€¢ Primary entry point for Operations content section                                       â•‘
+â•‘  â€¢ Reusable hero pattern that could be adapted for other sections                           â•‘
+â•‘                                                                                              â•‘
+â•‘  CONTENT ELEMENTS:                                                                           â•‘
+â•‘  â€¢ Hero title with gradient branding                                                        â•‘
+â•‘  â€¢ Value proposition subtitle                                                               â•‘
+â•‘  â€¢ Key performance statistics                                                               â•‘
+â•‘  â€¢ Call-to-action buttons                                                                   â•‘
+â•‘  â€¢ Background visual with overlay                                                           â•‘
+â•‘                                                                                              â•‘
+â•‘  NAVIGATION INTEGRATION:                                                                     â•‘
+â•‘  â€¢ Section ID: #hero (linked from Operations submenu "Farm Overview")                       â•‘
+â•‘  â€¢ Appears when Operations tab is active                                                    â•‘
+â•‘  â€¢ First section visible in Operations content area                                         â•‘
+â•‘                                                                                              â•‘
+â•‘  CSS STRUCTURE:                                                                              â•‘
+â•‘  â€¢ .hero - Main hero container with background                                              â•‘
+â•‘  â€¢ .hero-content - Content layout and positioning                                           â•‘
+â•‘  â€¢ .gradient-text - SKOV brand gradient styling                                             â•‘
+â•‘                                                                                              â•‘
+â•‘  HOC PRINCIPLES:                                                                             â•‘
+â•‘  â€¢ Encapsulates complete hero functionality                                                 â•‘
+â•‘  â€¢ Independent development and testing                                                      â•‘
+â•‘  â€¢ Consistent pattern reusable across sections                                              â•‘
+â•‘                                                                                              â•‘
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+-->
+
+<!-- Hero Section Component -->
+<section id="hero" class="hero">
+    <!-- DEBUGGING: This is the OPERATIONS/MANAGEMENT Hero Section -->
+    <div class="debug-marker" style="background: red; color: white; padding: 10px; text-align: center; font-weight: bold;">
+        âš ï¸ DEBUG: OPERATIONS SECTION - HERO COMPONENT âš ï¸
+    </div>
+    
+    <div class="hero-background">
+        <div class="hero-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Transform Your Farm with 
+                    <span class="gradient-text">Results-Driven Intelligence</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Harness real-time data to solve farm challenges, optimize production, and enhance animal welfare 
+                    with FarmOnline+ cloud-based system tailored to reach your business objectives.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">15%</span>
+                        <span class="stat-label">Energy Cost Reduction</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">12%</span>
+                        <span class="stat-label">Feed Waste Reduction</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Remote Monitoring</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn-primary btn-large">
+                        <i data-lucide="play-circle"></i>
+                        Request Demo
+                    </button>
+                    <button class="btn-secondary btn-large">
+                        <i data-lucide="download"></i>
+                        Start Free Trial
+                    </button>
+                </div>
+                <p class="hero-note">
+                    <i data-lucide="shield-check"></i>
+                    No credit card required â€¢ 30-day free trial â€¢ Cancel anytime
+                </p>
+            </div>
+            <div class="hero-visual">
+                <div class="dashboard-preview">
+                    <div class="dashboard-header">
+                        <div class="dashboard-tabs">
+                            <span class="tab active">Dashboard</span>
+                            <span class="tab">Analytics</span>
+                            <span class="tab">Alerts</span>
+                        </div>
+                    </div>
+                    <div class="dashboard-content">
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-icon green">
+                                    <i data-lucide="thermometer"></i>
+                                </div>
+                                <div class="metric-info">
+                                    <span class="metric-value">22.3Â°C</span>
+                                    <span class="metric-label">Temperature</span>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon blue">
+                                    <i data-lucide="droplets"></i>
+                                </div>
+                                <div class="metric-info">
+                                    <span class="metric-value">65%</span>
+                                    <span class="metric-label">Humidity</span>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon orange">
+                                    <i data-lucide="zap"></i>
+                                </div>
+                                <div class="metric-info">
+                                    <span class="metric-value">2.1kW</span>
+                                    <span class="metric-label">Power</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- Management Overview Section -->
+<section id="overview" class="overview-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Complete Farm Management Solution</h2>
+            <p class="section-subtitle">
+                Streamline your operations with our comprehensive platform designed for modern agriculture
+            </p>
+        </div>
+        <div class="overview-grid">
+            <div class="overview-item">
+                <div class="overview-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Real-Time Monitoring</h3>
+                <p>Track vital farm metrics 24/7 with our advanced sensor network and data analytics platform.</p>
+            </div>
+            <div class="overview-item">
+                <div class="overview-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Mobile Access</h3>
+                <p>Access your farm data anywhere, anytime with our responsive mobile application.</p>
+            </div>
+            <div class="overview-item">
+                <div class="overview-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3>Cloud-Based</h3>
+                <p>Secure, scalable cloud infrastructure ensures your data is always available and protected.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- Features Section Component -->
+<section id="features" class="features">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Why Choose FarmOnline+?</h2>
+            <p class="section-subtitle">
+                Unlike competitors, FarmOnline+ combines hardware reliability with advanced data-driven insights. 
+                This dual strength makes SKOV the complete ecosystem provider.
+            </p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i data-lucide="brain"></i>
+                </div>
+                <h3>Data-Driven Insights</h3>
+                <p>Real-time analytics identify feed, water, or climate issues for immediate action with trend warnings and actionable insights.</p>
+                <a href="#" class="feature-link">Learn more <i data-lucide="arrow-right"></i></a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i data-lucide="cloud"></i>
+                </div>
+                <h3>Accessible from Anywhere</h3>
+                <p>Cloud-based platform with web and mobile app access, enabling oversight from house to enterprise level.</p>
+                <a href="#" class="feature-link">Learn more <i data-lucide="arrow-right"></i></a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i data-lucide="target"></i>
+                </div>
+                <h3>Problem-Solution Focus</h3>
+                <p>Tools like the Boards app and Survey module address specific farm challenges, such as climate deviations or production inefficiencies.</p>
+                <a href="#" class="feature-link">Learn more <i data-lucide="arrow-right"></i></a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i data-lucide="globe"></i>
+                </div>
+                <h3>Regional Customization</h3>
+                <p>Tailored content and support for regional farming practices and languages across Europe, North America, Asia, and South America.</p>
+                <a href="#" class="feature-link">Learn more <i data-lucide="arrow-right"></i></a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i data-lucide="users"></i>
+                </div>
+                <h3>Key Account Integration</h3>
+                <p>Personalized dashboards and live quotation system integration for high-value clients.</p>
+                <a href="#" class="feature-link">Learn more <i data-lucide="arrow-right"></i></a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i data-lucide="heart"></i>
+                </div>
+                <h3>Animal Welfare & Efficiency</h3>
+                <p>Optimize resources while prioritizing sustainable, welfare-focused production.</p>
+                <a href="#" class="feature-link">Learn more <i data-lucide="arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- Solutions Section Component -->
+<section id="solutions" class="solutions">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Complete Solutions for Modern Farming</h2>
+            <p class="section-subtitle">
+                From novice to expert, our solutions adapt to your needs with a natural progression and learning path.
+            </p>
+        </div>
+
+        <div class="solutions-tabs">
+            <button class="tab-btn active" data-tab="save-money">Save Money</button>
+            <button class="tab-btn" data-tab="work-smarter">Work Smarter</button>
+            <button class="tab-btn" data-tab="animal-welfare">Animal Welfare</button>
+            <button class="tab-btn" data-tab="feel-secure">Feel Secure</button>
+        </div>
+
+        <div class="solutions-content">
+            <div class="tab-content active" id="save-money">
+                <div class="solution-layout">
+                    <div class="solution-text">
+                        <h3>Reduce Feed Waste by 12%</h3>
+                        <p>Our intelligent monitoring systems track feed consumption patterns and identify inefficiencies in real-time, helping you optimize feed distribution and reduce waste.</p>
+                        <ul class="benefits-list">
+                            <li><i data-lucide="check"></i>Real-time feed consumption tracking</li>
+                            <li><i data-lucide="check"></i>Automated alerts for overconsumption</li>
+                            <li><i data-lucide="check"></i>Historical trend analysis</li>
+                            <li><i data-lucide="check"></i>ROI calculation tools</li>
+                        </ul>
+                        <div class="solution-cta">
+                            <button class="btn-primary">See Case Study</button>
+                            <button class="btn-secondary">Calculate Savings</button>
+                        </div>
+                    </div>
+                    <div class="solution-visual">
+                        <div class="chart-placeholder">
+                            <h4>Feed Efficiency Trends</h4>
+                            <div class="chart-bars">
+                                <div class="bar" style="height: 60%"><span>Jan</span></div>
+                                <div class="bar" style="height: 75%"><span>Feb</span></div>
+                                <div class="bar" style="height: 85%"><span>Mar</span></div>
+                                <div class="bar" style="height: 90%"><span>Apr</span></div>
+                                <div class="bar" style="height: 95%"><span>May</span></div>
+                            </div>
+                            <p class="chart-caption">12% improvement in feed efficiency</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="work-smarter">
+                <div class="solution-layout">
+                    <div class="solution-text">
+                        <h3>Remote & Flexible Access</h3>
+                        <p>Monitor and control your farm operations from anywhere in the world. Our cloud-based platform provides instant access to critical farm data and controls.</p>
+                        <ul class="benefits-list">
+                            <li><i data-lucide="check"></i>24/7 remote monitoring</li>
+                            <li><i data-lucide="check"></i>Mobile app for on-the-go access</li>
+                            <li><i data-lucide="check"></i>Multi-site management</li>
+                            <li><i data-lucide="check"></i>Expert support integration</li>
+                        </ul>
+                        <div class="solution-cta">
+                            <button class="btn-primary">See Demo</button>
+                            <button class="btn-secondary">Download App</button>
+                        </div>
+                    </div>
+                    <div class="solution-visual">
+                        <div class="device-mockup">
+                            <div class="phone-frame">
+                                <div class="phone-screen">
+                                    <h5>Farm Dashboard</h5>
+                                    <div class="status-indicators">
+                                        <div class="status good">House 1: Normal</div>
+                                        <div class="status warning">House 2: Alert</div>
+                                        <div class="status good">House 3: Normal</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="animal-welfare">
+                <div class="solution-layout">
+                    <div class="solution-text">
+                        <h3>Improve Animal Welfare & Productivity</h3>
+                        <p>Create optimal living conditions for your animals with precise climate control and environmental monitoring that responds to their needs.</p>
+                        <ul class="benefits-list">
+                            <li><i data-lucide="check"></i>Precision climate control</li>
+                            <li><i data-lucide="check"></i>Air quality monitoring</li>
+                            <li><i data-lucide="check"></i>Behavioral pattern analysis</li>
+                            <li><i data-lucide="check"></i>Welfare scoring system</li>
+                        </ul>
+                        <div class="solution-cta">
+                            <button class="btn-primary">Learn More</button>
+                            <button class="btn-secondary">View Research</button>
+                        </div>
+                    </div>
+                    <div class="solution-visual">
+                        <div class="welfare-dashboard">
+                            <h4>Animal Welfare Score</h4>
+                            <div class="welfare-score">
+                                <div class="score-circle">
+                                    <span class="score">94</span>
+                                    <span class="score-label">Excellent</span>
+                                </div>
+                            </div>
+                            <div class="welfare-metrics">
+                                <div class="metric">Temperature: Optimal</div>
+                                <div class="metric">Air Quality: Good</div>
+                                <div class="metric">Activity: Normal</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="feel-secure">
+                <div class="solution-layout">
+                    <div class="solution-text">
+                        <h3>Advanced Alarm Systems</h3>
+                        <p>Never miss a critical event with our intelligent alarm system that prioritizes alerts and reduces notification fatigue while ensuring important issues are addressed immediately.</p>
+                        <ul class="benefits-list">
+                            <li><i data-lucide="check"></i>Smart alarm prioritization</li>
+                            <li><i data-lucide="check"></i>Multi-channel notifications</li>
+                            <li><i data-lucide="check"></i>Escalation procedures</li>
+                            <li><i data-lucide="check"></i>Response tracking</li>
+                        </ul>
+                        <div class="solution-cta">
+                            <button class="btn-primary">See Features</button>
+                            <button class="btn-secondary">Test Alerts</button>
+                        </div>
+                    </div>
+                    <div class="solution-visual">
+                        <div class="alert-center">
+                            <h4>Alert Center</h4>
+                            <div class="alerts">
+                                <div class="alert critical">
+                                    <i data-lucide="alert-triangle"></i>
+                                    <span>Temperature Critical - House 2</span>
+                                </div>
+                                <div class="alert warning">
+                                    <i data-lucide="alert-circle"></i>
+                                    <span>Feed Level Low - Silo A</span>
+                                </div>
+                                <div class="alert info">
+                                    <i data-lucide="info"></i>
+                                    <span>Maintenance Due - Ventilation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- Management Benefits Section -->
+<section id="benefits" class="benefits-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Why Choose FarmOnline+?</h2>
+            <p class="section-subtitle">
+                Experience the difference with our proven farm management platform
+            </p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <div class="benefit-number">01</div>
+                <h3>Increased Productivity</h3>
+                <p>Optimize your farm operations and boost yields with data-driven insights and automated processes.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-number">02</div>
+                <h3>Cost Reduction</h3>
+                <p>Reduce operational costs through efficient resource management and predictive maintenance.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-number">03</div>
+                <h3>Better Decision Making</h3>
+                <p>Make informed decisions with comprehensive analytics and real-time data visualization.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-number">04</div>
+                <h3>Enhanced Animal Welfare</h3>
+                <p>Monitor animal health and behavior patterns to ensure optimal welfare and productivity.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- Operations Pricing Component -->
+<section id="operations-pricing" class="pricing">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Operations Management Pricing</h2>
+            <p class="section-subtitle">
+                Optimize your farm operations with transparent pricing. All plans include farm management tools, operational insights, and productivity analytics.
+            </p>
+        </div>
+
+        <div class="pricing-toggle">
+            <span>Monthly</span>
+            <label class="toggle">
+                <input type="checkbox" id="operations-pricing-annual">
+                <span class="slider"></span>
+            </label>
+            <span>Annual <span class="discount">Save 20%</span></span>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card basic">
+                <div class="plan-header">
+                    <h3>Farm Basic</h3>
+                    <p>Essential farm management tools</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">â‚¬</span>
+                    <span class="amount monthly">99</span>
+                    <span class="amount annual" style="display: none;">79</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i data-lucide="check"></i>Up to 5 monitoring points</li>
+                    <li><i data-lucide="check"></i>Basic operational insights</li>
+                    <li><i data-lucide="check"></i>Farm worker mobile app</li>
+                    <li><i data-lucide="check"></i>Operational alerts</li>
+                    <li><i data-lucide="check"></i>Standard support</li>
+                </ul>
+                <button class="btn-plan">Start Farm Basic</button>
+            </div>
+
+            <div class="pricing-card professional featured">
+                <div class="plan-badge">Most Popular</div>
+                <div class="plan-header">
+                    <h3>Farm Professional</h3>
+                    <p>Advanced operations management</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">â‚¬</span>
+                    <span class="amount monthly">199</span>
+                    <span class="amount annual" style="display: none;">159</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i data-lucide="check"></i>Up to 20 monitoring points</li>
+                    <li><i data-lucide="check"></i>Advanced operational analytics</li>
+                    <li><i data-lucide="check"></i>Multi-farm management</li>
+                    <li><i data-lucide="check"></i>Predictive maintenance alerts</li>
+                    <li><i data-lucide="check"></i>Production optimization tools</li>
+                    <li><i data-lucide="check"></i>Priority support</li>
+                </ul>
+                <button class="btn-plan">Start Farm Professional</button>
+            </div>
+
+            <div class="pricing-card enterprise">
+                <div class="plan-header">
+                    <h3>Farm Enterprise</h3>
+                    <p>Complete operational control</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">â‚¬</span>
+                    <span class="amount monthly">399</span>
+                    <span class="amount annual" style="display: none;">319</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i data-lucide="check"></i>Unlimited monitoring points</li>
+                    <li><i data-lucide="check"></i>Complete operational suite</li>
+                    <li><i data-lucide="check"></i>Custom farm workflows</li>
+                    <li><i data-lucide="check"></i>Advanced AI insights</li>
+                    <li><i data-lucide="check"></i>Dedicated account manager</li>
+                    <li><i data-lucide="check"></i>24/7 premium support</li>
+                </ul>
+                <button class="btn-plan">Contact Sales</button>
+            </div>
+        </div>
+
+        <div class="pricing-footer">
+            <p>All plans include free setup, training, and onboarding. No hidden fees.</p>
+            <p><strong>30-day money-back guarantee</strong> â€¢ Cancel anytime</p>
+        </div>
+    </div>
+</section>
+
+            <!-- Operations Contact Component -->
+<section id="operations-contact" class="contact">
+    <div class="container">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Ready to Optimize Your Farm Operations?</h2>
+                <p>Join thousands of farm managers worldwide who are using FarmOnline+ operations management to increase efficiency, reduce costs, and improve farm productivity.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i data-lucide="phone"></i>
+                        <div>
+                            <h4>Operations Specialist</h4>
+                            <p>+45 87 23 33 00</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i data-lucide="mail"></i>
+                        <div>
+                            <h4>Operations Support</h4>
+                            <p>operations@farmonline.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i data-lucide="map-pin"></i>
+                        <div>
+                            <h4>Farm Operations HQ</h4>
+                            <p>Hedelundsvej 60, 8381 Tilst, Denmark</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-link"><i data-lucide="linkedin"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="twitter"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="facebook"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form class="demo-form">
+                    <h3>Request Operations Management Demo</h3>
+                    <div class="form-group">
+                        <input type="text" id="ops-name" required>
+                        <label for="ops-name">Full Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="ops-email" required>
+                        <label for="ops-email">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="ops-phone" required>
+                        <label for="ops-phone">Phone Number</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="ops-company" required>
+                        <label for="ops-company">Farm/Company Name</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="ops-farm-size" required>
+                            <option value="">Select Farm Size</option>
+                            <option value="small">Small (1-5 buildings)</option>
+                            <option value="medium">Medium (6-20 buildings)</option>
+                            <option value="large">Large (21-50 buildings)</option>
+                            <option value="enterprise">Enterprise (50+ buildings)</option>
+                        </select>
+                        <label for="ops-farm-size">Farm Size</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="ops-message" rows="4" required></textarea>
+                        <label for="ops-message">Tell us about your operational challenges</label>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <span>Request Operations Demo</span>
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+        </div>
+
+        <!-- Integration Content Section -->
+        
+            <!--
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â•‘                           INTEGRATION SECTIONS COMPONENT (HOC)                              â•‘
+â• â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•£
+â•‘                                                                                              â•‘
+â•‘  PURPOSE: Complete integration content for the Integration main navigation tab              â•‘
+â•‘                                                                                              â•‘
+â•‘  COMPONENT TYPE: Higher-Order Component (HOC)                                               â•‘
+â•‘  â€¢ Self-contained integration functionality sections                                        â•‘
+â•‘  â€¢ Composable with other components                                                         â•‘
+â•‘  â€¢ Appears only when Integration tab is active                                              â•‘
+â•‘                                                                                              â•‘
+â•‘  CONTENT SECTIONS:                                                                           â•‘
+â•‘  1. Partner Connectors (#partner-connectors)                                                â•‘
+â•‘     â€¢ Feed Management Systems                                                               â•‘
+â•‘     â€¢ Health Monitoring Integration                                                         â•‘
+â•‘     â€¢ Climate Control Systems                                                               â•‘
+â•‘                                                                                              â•‘
+â•‘  2. BI Solutions & Excel (#bi-solutions)                                                    â•‘
+â•‘     â€¢ Business Intelligence Tools                                                           â•‘
+â•‘     â€¢ Excel Integration                                                                     â•‘
+â•‘     â€¢ Custom Reporting                                                                      â•‘
+â•‘                                                                                              â•‘
+â•‘  3. ERP Integration (#erp-integration)                                                      â•‘
+â•‘     â€¢ Enterprise Resource Planning                                                          â•‘
+â•‘     â€¢ Multi-site Management                                                                 â•‘
+â•‘     â€¢ Custom Development                                                                    â•‘
+â•‘                                                                                              â•‘
+â•‘  NAVIGATION INTEGRATION:                                                                     â•‘
+â•‘  â€¢ Controlled by Integration main tab (data-section="integration")                          â•‘
+â•‘  â€¢ Submenu items link to individual sections within this component                          â•‘
+â•‘  â€¢ Smooth scrolling between sections within Integration content area                        â•‘
+â•‘                                                                                              â•‘
+â•‘  CSS CLASSES:                                                                                â•‘
+â•‘  â€¢ .integration-section - Section-specific styling                                          â•‘
+â•‘  â€¢ .integration-grid - Card layout grid                                                     â•‘
+â•‘  â€¢ .integration-card - Individual feature cards                                             â•‘
+â•‘                                                                                              â•‘
+â•‘  DEPENDENCIES:                                                                               â•‘
+â•‘  â€¢ Lucide icons for integration type icons                                                  â•‘
+â•‘  â€¢ Global CSS for section and grid styling                                                  â•‘
+â•‘  â€¢ Navigation system for section linking                                                    â•‘
+â•‘                                                                                              â•‘
+â•‘  HOC PRINCIPLES:                                                                             â•‘
+â•‘  â€¢ Encapsulates all integration-related content                                             â•‘
+â•‘  â€¢ Can be developed and tested independently                                                â•‘
+â•‘  â€¢ Maintains consistent section structure with other components                             â•‘
+â•‘                                                                                              â•‘
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+-->
+
+<!-- Integration Sections -->
+
+<!-- DEBUGGING: This is the INTEGRATION Sections Component -->
+<div class="debug-marker" style="background: blue; color: white; padding: 10px; text-align: center; font-weight: bold;">
+    âš ï¸ DEBUG: INTEGRATION SECTION - PARTNER CONNECTORS âš ï¸
+</div>
+
+<!-- Partner Connectors Section -->
+<section id="partner-connectors" class="section integration-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Partner Connectors</h2>
+            <p class="section-subtitle">
+                Seamlessly integrate FarmOnline+ with your existing farm management systems and third-party applications
+            </p>
+        </div>
+        <div class="integration-grid">
+            <div class="integration-card">
+                <div class="integration-icon">
+                    <i data-lucide="database"></i>
+                </div>
+                <h3>Feed Management Systems</h3>
+                <p>Connect with leading feed management platforms for automated feed scheduling and optimization.</p>
+                <div class="integration-features">
+                    <span class="feature-tag">Real-time sync</span>
+                    <span class="feature-tag">Automated triggers</span>
+                </div>
+            </div>
+            <div class="integration-card">
+                <div class="integration-icon">
+                    <i data-lucide="activity"></i>
+                </div>
+                <h3>Health Monitoring</h3>
+                <p>Integrate with veterinary systems and health monitoring devices for comprehensive animal welfare tracking.</p>
+                <div class="integration-features">
+                    <span class="feature-tag">Health alerts</span>
+                    <span class="feature-tag">Vet records</span>
+                </div>
+            </div>
+            <div class="integration-card">
+                <div class="integration-icon">
+                    <i data-lucide="thermometer"></i>
+                </div>
+                <h3>Climate Control</h3>
+                <p>Connect with HVAC and environmental control systems for optimal barn conditions.</p>
+                <div class="integration-features">
+                    <span class="feature-tag">Auto-adjustment</span>
+                    <span class="feature-tag">Energy optimization</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BI Solutions Section -->
+<section id="bi-solutions" class="section integration-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>BI Solutions & Excel Integration</h2>
+            <p class="section-subtitle">
+                Export your farm data to business intelligence tools and Excel for advanced analytics and reporting
+            </p>
+        </div>
+        <div class="bi-features">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i data-lucide="file-spreadsheet"></i>
+                </div>
+                <h3>Excel Export</h3>
+                <p>One-click export of all farm data to Excel formats for custom analysis and reporting.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i data-lucide="bar-chart-3"></i>
+                </div>
+                <h3>Power BI Integration</h3>
+                <p>Direct connection to Microsoft Power BI for interactive dashboards and advanced analytics.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i data-lucide="trending-up"></i>
+                </div>
+                <h3>Custom Reports</h3>
+                <p>Generate automated reports with your preferred business intelligence tools.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ERP Integration Section -->
+<section id="erp-integration" class="section integration-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>ERP Integration</h2>
+            <p class="section-subtitle">
+                Connect FarmOnline+ with your enterprise resource planning system for seamless business operations
+            </p>
+        </div>
+        <div class="erp-integration-content">
+            <div class="erp-benefits">
+                <h3>Streamlined Operations</h3>
+                <ul>
+                    <li>Automatic data synchronization</li>
+                    <li>Reduced manual data entry</li>
+                    <li>Real-time financial reporting</li>
+                    <li>Inventory management integration</li>
+                </ul>
+            </div>
+            <div class="erp-systems">
+                <h3>Supported ERP Systems</h3>
+                <div class="erp-logos">
+                    <div class="erp-system">SAP</div>
+                    <div class="erp-system">Oracle</div>
+                    <div class="erp-system">Microsoft Dynamics</div>
+                    <div class="erp-system">NetSuite</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- Integration Pricing Component -->
+<section id="integration-pricing" class="pricing">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Data Integration Pricing</h2>
+            <p class="section-subtitle">
+                Connect your farm data with powerful integrations. All plans include API access, data connectors, and business intelligence tools.
+            </p>
+        </div>
+
+        <div class="pricing-toggle">
+            <span>Monthly</span>
+            <label class="toggle">
+                <input type="checkbox" id="integration-pricing-annual">
+                <span class="slider"></span>
+            </label>
+            <span>Annual <span class="discount">Save 20%</span></span>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card basic">
+                <div class="plan-header">
+                    <h3>Data Basic</h3>
+                    <p>Essential data integration tools</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">â‚¬</span>
+                    <span class="amount monthly">149</span>
+                    <span class="amount annual" style="display: none;">119</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i data-lucide="check"></i>Basic API access</li>
+                    <li><i data-lucide="check"></i>Excel integration</li>
+                    <li><i data-lucide="check"></i>Standard connectors (3)</li>
+                    <li><i data-lucide="check"></i>Data export tools</li>
+                    <li><i data-lucide="check"></i>Email support</li>
+                </ul>
+                <button class="btn-plan">Start Data Basic</button>
+            </div>
+
+            <div class="pricing-card professional featured">
+                <div class="plan-badge">Most Popular</div>
+                <div class="plan-header">
+                    <h3>Data Professional</h3>
+                    <p>Advanced integration capabilities</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">â‚¬</span>
+                    <span class="amount monthly">299</span>
+                    <span class="amount annual" style="display: none;">239</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i data-lucide="check"></i>Full API access</li>
+                    <li><i data-lucide="check"></i>Advanced BI tools</li>
+                    <li><i data-lucide="check"></i>ERP integrations</li>
+                    <li><i data-lucide="check"></i>Custom connectors (10)</li>
+                    <li><i data-lucide="check"></i>Real-time data sync</li>
+                    <li><i data-lucide="check"></i>Priority support</li>
+                </ul>
+                <button class="btn-plan">Start Data Professional</button>
+            </div>
+
+            <div class="pricing-card enterprise">
+                <div class="plan-header">
+                    <h3>Data Enterprise</h3>
+                    <p>Complete integration platform</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">â‚¬</span>
+                    <span class="amount monthly">599</span>
+                    <span class="amount annual" style="display: none;">479</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i data-lucide="check"></i>Unlimited API calls</li>
+                    <li><i data-lucide="check"></i>Enterprise BI suite</li>
+                    <li><i data-lucide="check"></i>Custom integrations</li>
+                    <li><i data-lucide="check"></i>White-label options</li>
+                    <li><i data-lucide="check"></i>Dedicated integration team</li>
+                    <li><i data-lucide="check"></i>24/7 technical support</li>
+                </ul>
+                <button class="btn-plan">Contact Sales</button>
+            </div>
+        </div>
+
+        <div class="pricing-footer">
+            <p>All plans include setup assistance, documentation, and developer support.</p>
+            <p><strong>30-day free trial</strong> â€¢ No setup fees</p>
+        </div>
+    </div>
+</section>
+
+            <!-- Integration Contact Component -->
+<section id="integration-contact" class="contact">
+    <div class="container">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Ready to Integrate Your Farm Data?</h2>
+                <p>Connect your farm systems with powerful data integrations. Our integration specialists help you unlock the full potential of your agricultural data.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i data-lucide="phone"></i>
+                        <div>
+                            <h4>Integration Specialist</h4>
+                            <p>+45 87 23 33 00</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i data-lucide="mail"></i>
+                        <div>
+                            <h4>Integration Support</h4>
+                            <p>integrations@farmonline.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i data-lucide="code"></i>
+                        <div>
+                            <h4>Developer Portal</h4>
+                            <p>api.farmonline.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-link"><i data-lucide="linkedin"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="github"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="book-open"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form class="demo-form">
+                    <h3>Request Integration Consultation</h3>
+                    <div class="form-group">
+                        <input type="text" id="int-name" required>
+                        <label for="int-name">Full Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="int-email" required>
+                        <label for="int-email">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="int-phone" required>
+                        <label for="int-phone">Phone Number</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="int-company" required>
+                        <label for="int-company">Company/Organization</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="int-type" required>
+                            <option value="">Select Integration Type</option>
+                            <option value="erp">ERP System Integration</option>
+                            <option value="bi">Business Intelligence</option>
+                            <option value="api">Custom API Development</option>
+                            <option value="partner">Partner Connector</option>
+                            <option value="other">Other Integration</option>
+                        </select>
+                        <label for="int-type">Integration Type</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="int-message" rows="4" required></textarea>
+                        <label for="int-message">Describe your integration requirements</label>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <span>Request Integration Consultation</span>
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+        </div>
+
+        <!-- Infrastructure Content Section -->
+        
+            <!-- Infrastructure Sections -->
+
+<!-- BlueControl Models Section -->
+<section id="bluecontrol-models" class="section infrastructure-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>BlueControl Models</h2>
+            <p class="section-subtitle">
+                Choose the right BlueControl solution for your farm size and requirements
+            </p>
+        </div>
+        <div class="models-grid">
+            <div class="model-card">
+                <div class="model-header">
+                    <h3>BlueControl Lite</h3>
+                    <p class="model-subtitle">Perfect for small to medium farms</p>
+                </div>
+                <div class="model-features">
+                    <ul>
+                        <li>Up to 4 climate sections</li>
+                        <li>Basic environmental monitoring</li>
+                        <li>Mobile app access</li>
+                        <li>Standard reporting</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="model-card featured">
+                <div class="model-header">
+                    <h3>BlueControl Pro</h3>
+                    <p class="model-subtitle">Advanced solution for commercial operations</p>
+                </div>
+                <div class="model-features">
+                    <ul>
+                        <li>Unlimited climate sections</li>
+                        <li>Advanced analytics & AI</li>
+                        <li>API integrations</li>
+                        <li>Custom dashboards</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="model-card">
+                <div class="model-header">
+                    <h3>BlueControl Enterprise</h3>
+                    <p class="model-subtitle">Complete solution for large operations</p>
+                </div>
+                <div class="model-features">
+                    <ul>
+                        <li>Multi-site management</li>
+                        <li>Enterprise integrations</li>
+                        <li>Dedicated support</li>
+                        <li>Custom development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Global Infrastructure Section -->
+<section id="global-infrastructure" class="section infrastructure-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Global Infrastructure</h2>
+            <p class="section-subtitle">
+                Worldwide cloud infrastructure ensuring reliable access to your farm data
+            </p>
+        </div>
+        <div class="infrastructure-content">
+            <div class="infrastructure-map">
+                <h3>Data Centers Worldwide</h3>
+                <div class="data-centers">
+                    <div class="region">
+                        <h4>Europe</h4>
+                        <p>Primary: Denmark, Secondary: Germany</p>
+                    </div>
+                    <div class="region">
+                        <h4>North America</h4>
+                        <p>Primary: USA East, Secondary: USA West</p>
+                    </div>
+                    <div class="region">
+                        <h4>Asia Pacific</h4>
+                        <p>Primary: Singapore, Secondary: Australia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Data Security Section -->
+<section id="data-security-overview" class="section infrastructure-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Data Security & Compliance</h2>
+            <p class="section-subtitle">
+                Enterprise-grade security protecting your valuable farm data
+            </p>
+        </div>
+        <div class="security-features">
+            <div class="security-item">
+                <div class="security-icon">
+                    <i data-lucide="shield-check"></i>
+                </div>
+                <h3>End-to-End Encryption</h3>
+                <p>All data encrypted in transit and at rest using AES-256 encryption standards.</p>
+            </div>
+            <div class="security-item">
+                <div class="security-icon">
+                    <i data-lucide="key"></i>
+                </div>
+                <h3>Multi-Factor Authentication</h3>
+                <p>Secure access with MFA and role-based permissions for team members.</p>
+            </div>
+            <div class="security-item">
+                <div class="security-icon">
+                    <i data-lucide="file-check"></i>
+                </div>
+                <h3>Compliance Ready</h3>
+                <p>GDPR compliant with regular security audits and certifications.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- Infrastructure Pricing Component -->
+<section id="infrastructure-pricing" class="pricing">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Infrastructure Pricing</h2>
+            <p class="section-subtitle">
+                Secure, scalable infrastructure for your farm technology. All plans include global data centers, security monitoring, and 99.9% uptime SLA.
+            </p>
+        </div>
+
+        <div class="pricing-toggle">
+            <span>Monthly</span>
+            <label class="toggle">
+                <input type="checkbox" id="infrastructure-pricing-annual">
+                <span class="slider"></span>
+            </label>
+            <span>Annual <span class="discount">Save 20%</span></span>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card basic">
+                <div class="plan-header">
+                    <h3>Infrastructure Basic</h3>
+                    <p>Essential cloud infrastructure</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">â‚¬</span>
+                    <span class="amount monthly">79</span>
+                    <span class="amount annual" style="display: none;">63</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i data-lucide="check"></i>Regional data centers</li>
+                    <li><i data-lucide="check"></i>Basic security monitoring</li>
+                    <li><i data-lucide="check"></i>99.9% uptime SLA</li>
+                    <li><i data-lucide="check"></i>Standard data backup</li>
+                    <li><i data-lucide="check"></i>Email support</li>
+                </ul>
+                <button class="btn-plan">Start Infrastructure Basic</button>
+            </div>
+
+            <div class="pricing-card professional featured">
+                <div class="plan-badge">Most Popular</div>
+                <div class="plan-header">
+                    <h3>Infrastructure Professional</h3>
+                    <p>Advanced security & performance</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">â‚¬</span>
+                    <span class="amount monthly">159</span>
+                    <span class="amount annual" style="display: none;">127</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i data-lucide="check"></i>Global data centers</li>
+                    <li><i data-lucide="check"></i>Advanced security suite</li>
+                    <li><i data-lucide="check"></i>99.95% uptime SLA</li>
+                    <li><i data-lucide="check"></i>Encrypted data storage</li>
+                    <li><i data-lucide="check"></i>Performance monitoring</li>
+                    <li><i data-lucide="check"></i>Priority support</li>
+                </ul>
+                <button class="btn-plan">Start Infrastructure Professional</button>
+            </div>
+
+            <div class="pricing-card enterprise">
+                <div class="plan-header">
+                    <h3>Infrastructure Enterprise</h3>
+                    <p>Maximum security & compliance</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">â‚¬</span>
+                    <span class="amount monthly">319</span>
+                    <span class="amount annual" style="display: none;">255</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i data-lucide="check"></i>Private cloud deployment</li>
+                    <li><i data-lucide="check"></i>Enterprise security compliance</li>
+                    <li><i data-lucide="check"></i>99.99% uptime SLA</li>
+                    <li><i data-lucide="check"></i>Custom security protocols</li>
+                    <li><i data-lucide="check"></i>Dedicated infrastructure team</li>
+                    <li><i data-lucide="check"></i>24/7 security monitoring</li>
+                </ul>
+                <button class="btn-plan">Contact Sales</button>
+            </div>
+        </div>
+
+        <div class="pricing-footer">
+            <p>All plans include security audits, compliance documentation, and disaster recovery.</p>
+            <p><strong>99.9% uptime guarantee</strong> â€¢ SOC 2 Type II certified</p>
+        </div>
+    </div>
+</section>
+
+            <!-- Infrastructure Contact Component -->
+<section id="infrastructure-contact" class="contact">
+    <div class="container">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Ready to Secure Your Farm Infrastructure?</h2>
+                <p>Trust your farm data to enterprise-grade infrastructure. Our infrastructure specialists ensure your systems are secure, compliant, and always available.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i data-lucide="phone"></i>
+                        <div>
+                            <h4>Infrastructure Specialist</h4>
+                            <p>+45 87 23 33 00</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i data-lucide="mail"></i>
+                        <div>
+                            <h4>Infrastructure Support</h4>
+                            <p>infrastructure@farmonline.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i data-lucide="shield"></i>
+                        <div>
+                            <h4>Security Team</h4>
+                            <p>security@farmonline.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-link"><i data-lucide="linkedin"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="shield-check"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="file-text"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form class="demo-form">
+                    <h3>Request Infrastructure Assessment</h3>
+                    <div class="form-group">
+                        <input type="text" id="infra-name" required>
+                        <label for="infra-name">Full Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="infra-email" required>
+                        <label for="infra-email">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="infra-phone" required>
+                        <label for="infra-phone">Phone Number</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="infra-company" required>
+                        <label for="infra-company">Company/Organization</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="infra-compliance" required>
+                            <option value="">Select Compliance Requirements</option>
+                            <option value="gdpr">GDPR Compliance</option>
+                            <option value="soc2">SOC 2 Type II</option>
+                            <option value="iso27001">ISO 27001</option>
+                            <option value="custom">Custom Requirements</option>
+                            <option value="basic">Standard Security</option>
+                        </select>
+                        <label for="infra-compliance">Compliance Needs</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="infra-message" rows="4" required></textarea>
+                        <label for="infra-message">Describe your infrastructure requirements</label>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <span>Request Infrastructure Assessment</span>
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+        </div>
+
+        <!-- Applications Content Section -->
+        
+            <!-- Applications Sections -->
+
+<!-- Mobile App Section -->
+<section id="mobile-app" class="section applications-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>FarmOnline+ Mobile App</h2>
+            <p class="section-subtitle">
+                Monitor and control your farm operations from anywhere with our mobile application
+            </p>
+        </div>
+        <div class="app-features">
+            <div class="app-feature">
+                <div class="feature-icon">
+                    <i data-lucide="smartphone"></i>
+                </div>
+                <h3>Real-Time Monitoring</h3>
+                <p>Check climate conditions, animal status, and alerts instantly on your mobile device.</p>
+            </div>
+            <div class="app-feature">
+                <div class="feature-icon">
+                    <i data-lucide="settings"></i>
+                </div>
+                <h3>Remote Control</h3>
+                <p>Adjust ventilation, heating, and feeding systems directly from your phone.</p>
+            </div>
+            <div class="app-feature">
+                <div class="feature-icon">
+                    <i data-lucide="bell"></i>
+                </div>
+                <h3>Smart Notifications</h3>
+                <p>Receive intelligent alerts for critical events and maintenance reminders.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Survey WebApp Section -->
+<section id="survey-webapp" class="section applications-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Survey WebApp</h2>
+            <p class="section-subtitle">
+                Conduct farm inspections and surveys with our digital inspection platform
+            </p>
+        </div>
+        <div class="survey-content">
+            <div class="survey-features">
+                <h3>Digital Inspections</h3>
+                <ul>
+                    <li>Customizable inspection forms</li>
+                    <li>Photo and video documentation</li>
+                    <li>GPS location tracking</li>
+                    <li>Offline capability</li>
+                </ul>
+            </div>
+            <div class="survey-benefits">
+                <h3>Benefits</h3>
+                <ul>
+                    <li>Eliminate paper-based inspections</li>
+                    <li>Ensure consistent data collection</li>
+                    <li>Generate automatic reports</li>
+                    <li>Track compliance over time</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Boards WebApp Section -->
+<section id="boards-webapp" class="section applications-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Boards WebApp</h2>
+            <p class="section-subtitle">
+                Visual dashboards and control panels for comprehensive farm management
+            </p>
+        </div>
+        <div class="boards-features">
+            <div class="board-type">
+                <h3>Climate Boards</h3>
+                <p>Monitor temperature, humidity, air quality, and ventilation across all sections.</p>
+            </div>
+            <div class="board-type">
+                <h3>Production Boards</h3>
+                <p>Track feed consumption, growth rates, and production metrics in real-time.</p>
+            </div>
+            <div class="board-type">
+                <h3>Alarm Boards</h3>
+                <p>Centralized view of all active alarms and system status across your operation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Analytics WebApp Section -->
+<section id="analytics-webapp" class="section applications-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2>Analytics WebApp</h2>
+            <p class="section-subtitle">
+                Advanced analytics and reporting tools for data-driven farm management
+            </p>
+        </div>
+        <div class="analytics-features">
+            <div class="analytics-item">
+                <div class="analytics-icon">
+                    <i data-lucide="trending-up"></i>
+                </div>
+                <h3>Performance Analytics</h3>
+                <p>Analyze production trends, efficiency metrics, and identify optimization opportunities.</p>
+            </div>
+            <div class="analytics-item">
+                <div class="analytics-icon">
+                    <i data-lucide="bar-chart-3"></i>
+                </div>
+                <h3>Custom Reports</h3>
+                <p>Create custom reports and dashboards tailored to your specific business needs.</p>
+            </div>
+            <div class="analytics-item">
+                <div class="analytics-icon">
+                    <i data-lucide="brain"></i>
+                </div>
+                <h3>Predictive Insights</h3>
+                <p>Leverage AI and machine learning for predictive analytics and recommendations.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- Applications Pricing Component -->
+<section id="applications-pricing" class="pricing">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Applications Pricing</h2>
+            <p class="section-subtitle">
+                Access powerful farm applications including mobile apps, analytics dashboards, and specialized tools. All plans include app access, updates, and user training.
+            </p>
+        </div>
+
+        <div class="pricing-toggle">
+            <span>Monthly</span>
+            <label class="toggle">
+                <input type="checkbox" id="applications-pricing-annual">
+                <span class="slider"></span>
+            </label>
+            <span>Annual <span class="discount">Save 20%</span></span>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card basic">
+                <div class="plan-header">
+                    <h3>Apps Basic</h3>
+                    <p>Essential farm applications</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">â‚¬</span>
+                    <span class="amount monthly">129</span>
+                    <span class="amount annual" style="display: none;">103</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i data-lucide="check"></i>Mobile app access</li>
+                    <li><i data-lucide="check"></i>Basic dashboard views</li>
+                    <li><i data-lucide="check"></i>Survey webapp</li>
+                    <li><i data-lucide="check"></i>Up to 5 user licenses</li>
+                    <li><i data-lucide="check"></i>Standard app support</li>
+                </ul>
+                <button class="btn-plan">Start Apps Basic</button>
+            </div>
+
+            <div class="pricing-card professional featured">
+                <div class="plan-badge">Most Popular</div>
+                <div class="plan-header">
+                    <h3>Apps Professional</h3>
+                    <p>Full application suite</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">â‚¬</span>
+                    <span class="amount monthly">259</span>
+                    <span class="amount annual" style="display: none;">207</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i data-lucide="check"></i>All mobile apps</li>
+                    <li><i data-lucide="check"></i>Advanced dashboards</li>
+                    <li><i data-lucide="check"></i>Analytics webapp</li>
+                    <li><i data-lucide="check"></i>Boards webapp</li>
+                    <li><i data-lucide="check"></i>Up to 20 user licenses</li>
+                    <li><i data-lucide="check"></i>Priority app support</li>
+                </ul>
+                <button class="btn-plan">Start Apps Professional</button>
+            </div>
+
+            <div class="pricing-card enterprise">
+                <div class="plan-header">
+                    <h3>Apps Enterprise</h3>
+                    <p>Custom applications & unlimited access</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">â‚¬</span>
+                    <span class="amount monthly">499</span>
+                    <span class="amount annual" style="display: none;">399</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i data-lucide="check"></i>All applications</li>
+                    <li><i data-lucide="check"></i>Custom app development</li>
+                    <li><i data-lucide="check"></i>White-label options</li>
+                    <li><i data-lucide="check"></i>Advanced analytics suite</li>
+                    <li><i data-lucide="check"></i>Unlimited user licenses</li>
+                    <li><i data-lucide="check"></i>Dedicated app specialist</li>
+                </ul>
+                <button class="btn-plan">Contact Sales</button>
+            </div>
+        </div>
+
+        <div class="pricing-footer">
+            <p>All plans include app training, documentation, and regular feature updates.</p>
+            <p><strong>Free 14-day trial</strong> â€¢ No app store fees</p>
+        </div>
+    </div>
+</section>
+
+            <!-- Applications Contact Component -->
+<section id="applications-contact" class="contact">
+    <div class="container">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Ready to Access Farm Applications?</h2>
+                <p>Empower your team with powerful farm applications. From mobile tools for workers to advanced analytics for managers, we have the apps you need.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i data-lucide="phone"></i>
+                        <div>
+                            <h4>Applications Specialist</h4>
+                            <p>+45 87 23 33 00</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i data-lucide="mail"></i>
+                        <div>
+                            <h4>App Support</h4>
+                            <p>apps@farmonline.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i data-lucide="smartphone"></i>
+                        <div>
+                            <h4>Mobile Support</h4>
+                            <p>mobile@farmonline.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-link"><i data-lucide="linkedin"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="download"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="book-open"></i></a>
+                    <a href="#" class="social-link"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form class="demo-form">
+                    <h3>Request Applications Demo</h3>
+                    <div class="form-group">
+                        <input type="text" id="app-name" required>
+                        <label for="app-name">Full Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="app-email" required>
+                        <label for="app-email">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="app-phone" required>
+                        <label for="app-phone">Phone Number</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="app-company" required>
+                        <label for="app-company">Farm/Company Name</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="app-interest" required>
+                            <option value="">Select Primary Interest</option>
+                            <option value="mobile">Mobile Apps</option>
+                            <option value="analytics">Analytics Webapp</option>
+                            <option value="survey">Survey Webapp</option>
+                            <option value="boards">Boards Webapp</option>
+                            <option value="all">All Applications</option>
+                        </select>
+                        <label for="app-interest">Application Interest</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="app-message" rows="4" required></textarea>
+                        <label for="app-message">Tell us about your application needs</label>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <span>Request Applications Demo</span>
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+        </div>
+
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="global-footer">
+        <!-- Footer Component -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="./assets/skov-logo.svg" alt="SKOV" class="logo">
+                    <span class="brand">FarmOnline+</span>
+                </div>
+                <p>The world's leading data-driven farm management platform, helping farmers optimize operations and improve animal welfare.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#">Mobile App</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><a href="#">Poultry Farming</a></li>
+                    <li><a href="#">Pig Farming</a></li>
+                    <li><a href="#">Climate Control</a></li>
+                    <li><a href="#">Feed Management</a></li>
+                    <li><a href="#">Energy Optimization</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Webinars</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About SKOV</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 SKOV A/S. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </footer>
+
+    
+    <script src="scripts/main.js"></script>
+</body>
+</html>
+
