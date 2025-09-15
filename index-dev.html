@@ -31,14 +31,18 @@
 ║     └─ Shared: Contact                                                                      ║
 ║                                                                                              ║
 ║  COMPONENT PLACEHOLDERS:                                                                     ║
-║  • <!-- NAV_COMPONENT --> → components/navigation/nav.html                                  ║
-║  • <!-- MANAGEMENT_*_COMPONENT --> → components/management/*.html                           ║
-║  • <!-- INTEGRATION_SECTIONS_COMPONENT --> → components/integration/sections.html          ║
-║  • <!-- INFRASTRUCTURE_SECTIONS_COMPONENT --> → components/infrastructure/sections.html    ║
-║  • <!-- APPLICATIONS_SECTIONS_COMPONENT --> → components/applications/sections.html        ║
-║  • <!-- PRICING_COMPONENT --> → components/sections/pricing.html                           ║
-║  • <!-- CONTACT_COMPONENT --> → components/sections/contact.html                           ║
-║  • <!-- FOOTER_COMPONENT --> → components/footer.html                                      ║
+║  • NAV_COMPONENT → components/navigation/nav.html                                           ║
+║  • MANAGEMENT_*_COMPONENT → components/management/*.html                                    ║
+║  • INTEGRATION_SECTIONS_COMPONENT → components/integration/sections.html                   ║
+║  • INTEGRATION_PRICING_COMPONENT → components/integration/pricing.html                     ║
+║  • INTEGRATION_CONTACT_COMPONENT → components/integration/contact.html                     ║
+║  • INFRASTRUCTURE_SECTIONS_COMPONENT → components/infrastructure/sections.html             ║
+║  • INFRASTRUCTURE_PRICING_COMPONENT → components/infrastructure/pricing.html               ║
+║  • INFRASTRUCTURE_CONTACT_COMPONENT → components/infrastructure/contact.html               ║
+║  • APPLICATIONS_SECTIONS_COMPONENT → components/applications/sections.html                 ║
+║  • APPLICATIONS_PRICING_COMPONENT → components/applications/pricing.html                   ║
+║  • APPLICATIONS_CONTACT_COMPONENT → components/applications/contact.html                   ║
+║  • FOOTER_COMPONENT → components/footer.html                                                ║
 ║                                                                                              ║
 ║  BUILD PROCESS:                                                                              ║
 ║  1. Development: Uses this file with dynamic component loading                               ║
@@ -81,30 +85,37 @@
             <!-- MANAGEMENT_HERO_COMPONENT -->
             <!-- MANAGEMENT_OVERVIEW_COMPONENT -->
             <!-- MANAGEMENT_FEATURES_COMPONENT -->
+            <!-- MANAGEMENT_SOLUTIONS_COMPONENT -->
             <!-- MANAGEMENT_BENEFITS_COMPONENT -->
+            <!-- MANAGEMENT_PRICING_COMPONENT -->
+            <!-- MANAGEMENT_CONTACT_COMPONENT -->
         </div>
 
         <!-- Integration Content Section -->
         <div class="content-section" data-section="integration">
             <!-- INTEGRATION_SECTIONS_COMPONENT -->
+            <!-- INTEGRATION_PRICING_COMPONENT -->
+            <!-- INTEGRATION_CONTACT_COMPONENT -->
         </div>
 
         <!-- Infrastructure Content Section -->
         <div class="content-section" data-section="infrastructure">
             <!-- INFRASTRUCTURE_SECTIONS_COMPONENT -->
+            <!-- INFRASTRUCTURE_PRICING_COMPONENT -->
+            <!-- INFRASTRUCTURE_CONTACT_COMPONENT -->
         </div>
 
         <!-- Applications Content Section -->
         <div class="content-section" data-section="applications">
             <!-- APPLICATIONS_SECTIONS_COMPONENT -->
+            <!-- APPLICATIONS_PRICING_COMPONENT -->
+            <!-- APPLICATIONS_CONTACT_COMPONENT -->
         </div>
 
     </main>
 
-    <!-- Shared Footer Sections (visible on all pages) -->
-    <footer class="shared-sections">
-        <!-- PRICING_COMPONENT -->
-        <!-- CONTACT_COMPONENT -->
+    <!-- Global Footer -->
+    <footer class="global-footer">
         <!-- FOOTER_COMPONENT -->
     </footer>
 

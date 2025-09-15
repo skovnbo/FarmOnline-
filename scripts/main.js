@@ -46,131 +46,195 @@ if (typeof lucide !== 'undefined') {
     lucide.createIcons();
 }
 
-// Dynamic Navigation System
-const navTabs = document.querySelectorAll('.nav-tab');
-const submenuItems = document.querySelectorAll('.submenu-items');
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
+// Ensure only the operations section is visible on page load
+function initializePageSections() {
+    const contentSections = document.querySelectorAll('.content-section');
+    contentSections.forEach(section => {
+        section.classList.remove('active');
+        section.style.display = 'none';
+    });
+    
+    // Show only operations section by default
+    const operationsSection = document.querySelector('.content-section[data-section="operations"]');
+    if (operationsSection) {
+        operationsSection.classList.add('active');
+        operationsSection.style.display = 'block';
+    }
+}
 
-// Handle main navigation tab switching
-navTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        const section = tab.getAttribute('data-section');
-        console.log('Navigation tab clicked:', section);
-        
-        // Update active tab
-        navTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        
-        // Show/hide content sections hierarchically
-        const contentSections = document.querySelectorAll('.content-section');
-        contentSections.forEach(contentSection => {
-            if (contentSection.getAttribute('data-section') === section) {
-                contentSection.classList.add('active');
-                contentSection.style.display = 'block';
-            } else {
+// Initialize page sections
+initializePageSections();
+
+// Function to initialize navigation listeners
+function initializeNavigation() {
+    console.log('🔄 INITIALIZING NAVIGATION...');
+    
+    // Dynamic Navigation System
+    const navTabs = document.querySelectorAll('.nav-tab');
+    const submenuItems = document.querySelectorAll('.submenu-items');
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    console.log('🔍 NAVIGATION DEBUG:');
+    console.log('Nav tabs found:', navTabs.length);
+    console.log('Submenu items found:', submenuItems.length);
+    console.log('Nav tabs elements:', navTabs);
+
+    // Handle main navigation tab switching
+    navTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const section = tab.getAttribute('data-section');
+            console.log('Navigation tab clicked:', section);
+            
+            // Update active tab
+            navTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            
+            // Show/hide content sections hierarchically
+            const contentSections = document.querySelectorAll('.content-section');
+            console.log('Found content sections:', contentSections.length);
+            
+            contentSections.forEach(contentSection => {
+                // Hide all sections first
                 contentSection.classList.remove('active');
                 contentSection.style.display = 'none';
-            }
-        });
-        
-        // Update active submenu
-        submenuItems.forEach(submenu => {
-            submenu.classList.remove('active');
-            if (submenu.getAttribute('data-submenu') === section) {
-                submenu.classList.add('active');
+                console.log('Hiding section:', contentSection.getAttribute('data-section'));
+            });
+            
+            // Show only the target section
+            const targetSection = document.querySelector(`.content-section[data-section="${section}"]`);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                targetSection.style.display = 'block';
+                console.log('Showing section:', section);
                 
-                // Navigate to the first item in the active submenu
-                const firstSubmenuLink = submenu.querySelector('.submenu-link');
-                if (firstSubmenuLink) {
-                    const targetHref = firstSubmenuLink.getAttribute('href');
-                    console.log('Target href:', targetHref);
+                // Scroll to top of the page when switching sections
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                console.error('Target section not found:', section);
+            }
+            
+            // Update active submenu
+            submenuItems.forEach(submenu => {
+                submenu.classList.remove('active');
+                if (submenu.getAttribute('data-submenu') === section) {
+                    submenu.classList.add('active');
                     
-                    // Update active submenu link
-                    submenu.querySelectorAll('.submenu-link').forEach(link => link.classList.remove('active'));
-                    firstSubmenuLink.classList.add('active');
-                    
-                    // Navigate to the target section
-                    if (targetHref && targetHref.startsWith('#')) {
-                        // Wait for content to be shown, then scroll
-                        setTimeout(() => {
-                            const targetSection = document.querySelector(targetHref);
-                            console.log('Target section found:', targetSection);
-                            if (targetSection) {
-                                const offsetTop = targetSection.offsetTop - 120; // Account for fixed navbar
-                                console.log('Scrolling to:', offsetTop);
-                                window.scrollTo({
-                                    top: offsetTop,
-                                    behavior: 'smooth'
-                                });
-                            } else {
-                                console.warn('Target section not found:', targetHref);
-                                // Scroll to top of the active content section
+                    // Navigate to the first item in the active submenu
+                    const firstSubmenuLink = submenu.querySelector('.submenu-link');
+                    if (firstSubmenuLink) {
+                        const targetHref = firstSubmenuLink.getAttribute('href');
+                        console.log('Target href:', targetHref);
+                        
+                        // Update active submenu link
+                        submenu.querySelectorAll('.submenu-link').forEach(link => link.classList.remove('active'));
+                        firstSubmenuLink.classList.add('active');
+                        
+                        // Navigate to the target section within the active content section
+                        if (targetHref && targetHref.startsWith('#')) {
+                            // Wait for content to be shown, then scroll
+                            setTimeout(() => {
+                                // Only look for the target within the active content section
                                 const activeContentSection = document.querySelector('.content-section.active');
-                                if (activeContentSection) {
-                                    const offsetTop = activeContentSection.offsetTop - 120;
+                                const targetSection = activeContentSection ? activeContentSection.querySelector(targetHref) : null;
+                                console.log('Target section found:', targetSection);
+                                if (targetSection) {
+                                    const offsetTop = targetSection.offsetTop - 120; // Account for fixed navbar
+                                    console.log('Scrolling to:', offsetTop);
                                     window.scrollTo({
                                         top: offsetTop,
                                         behavior: 'smooth'
                                     });
+                                } else {
+                                    console.warn('Target section not found:', targetHref);
+                                    // Scroll to top of the active content section
+                                    if (activeContentSection) {
+                                        window.scrollTo({
+                                            top: 0,
+                                            behavior: 'smooth'
+                                        });
+                                    }
                                 }
-                            }
-                        }, 150);
+                            }, 150);
+                        }
                     }
                 }
+            });
+        });
+    });
+
+    // Mobile Navigation Toggle
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            
+            // Prevent body scroll when mobile menu is open
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = '';
             }
         });
-    });
-});
-
-// Mobile Navigation Toggle
-if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
         
-        // Prevent body scroll when mobile menu is open
-        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-    });
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
-            mobileMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-    
-    // Close mobile menu when clicking on a link
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links .submenu-link');
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-            document.body.style.overflow = '';
+        // Close mobile menu when clicking on a link
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links .submenu-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
-    });
+    }
 }
+
+// Try to initialize navigation immediately
+initializeNavigation();
+
+// Also listen for a custom event from component loader
+document.addEventListener('componentsLoaded', () => {
+    console.log('🎯 COMPONENTS LOADED EVENT RECEIVED - Reinitializing navigation');
+    initializeNavigation();
+});
 
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href');
+        
+        // Only look for the target within the active content section
+        const activeContentSection = document.querySelector('.content-section.active');
+        const target = activeContentSection ? activeContentSection.querySelector(targetId) : null;
+        
         if (target) {
             const offsetTop = target.offsetTop - 120; // Account for fixed navbar with submenu
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
             });
+        } else {
+            console.warn('Target not found in active section:', targetId);
         }
     });
 });
 
 // Active Navigation Link Highlighting
 function updateActiveNavLink() {
-    const sections = document.querySelectorAll('section[id]');
+    // Only check sections within the active content section
+    const activeContentSection = document.querySelector('.content-section.active');
+    if (!activeContentSection) return;
+    
+    const sections = activeContentSection.querySelectorAll('section[id]');
     const submenuLinks = document.querySelectorAll('.submenu-link');
     
     let current = '';

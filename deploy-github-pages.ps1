@@ -15,12 +15,11 @@
 # ║  COMPONENT EMBEDDING MAPPING:                                                                ║
 # ║  <!-- NAV_COMPONENT --> → components/navigation/nav.html                                    ║
 # ║  <!-- MANAGEMENT_*_COMPONENT --> → components/management/*.html                             ║
-# ║  <!-- INTEGRATION_SECTIONS_COMPONENT --> → components/integration/sections.html            ║
-# ║  <!-- INFRASTRUCTURE_SECTIONS_COMPONENT --> → components/infrastructure/sections.html      ║
-# ║  <!-- APPLICATIONS_SECTIONS_COMPONENT --> → components/applications/sections.html          ║
-# ║  <!-- PRICING_COMPONENT --> → components/sections/pricing.html                             ║
-# ║  <!-- CONTACT_COMPONENT --> → components/sections/contact.html                             ║
+# ║  <!-- INTEGRATION_*_COMPONENT --> → components/integration/*.html                           ║
+# ║  <!-- INFRASTRUCTURE_*_COMPONENT --> → components/infrastructure/*.html                     ║
+# ║  <!-- APPLICATIONS_*_COMPONENT --> → components/applications/*.html                         ║
 # ║  <!-- FOOTER_COMPONENT --> → components/footer.html                                        ║
+# ║  NOTE: Each section now has independent pricing and contact components                      ║
 # ║                                                                                              ║
 # ║  ADVANTAGES:                                                                                 ║
 # ║  • Single file deployment (GitHub Pages compatible)                                         ║
@@ -62,25 +61,24 @@ $baseContent = Get-Content "index-dev.html" -Raw
 
 # Read all component files and replace placeholders
 $componentFiles = @{
-    "components/hero.html" = "<!-- HERO_COMPONENT -->"
     "components/navigation/nav.html" = "<!-- NAV_COMPONENT -->"
-    "components/sections/about.html" = "<!-- ABOUT_COMPONENT -->"
-    "components/sections/services.html" = "<!-- SERVICES_COMPONENT -->"
-    "components/sections/team.html" = "<!-- TEAM_COMPONENT -->"
-    "components/sections/pricing.html" = "<!-- PRICING_COMPONENT -->"
-    "components/sections/contact.html" = "<!-- CONTACT_COMPONENT -->"
     "components/footer.html" = "<!-- FOOTER_COMPONENT -->"
     "components/management/hero.html" = "<!-- MANAGEMENT_HERO_COMPONENT -->"
     "components/management/overview.html" = "<!-- MANAGEMENT_OVERVIEW_COMPONENT -->"
     "components/management/features.html" = "<!-- MANAGEMENT_FEATURES_COMPONENT -->"
+    "components/management/solutions.html" = "<!-- MANAGEMENT_SOLUTIONS_COMPONENT -->"
     "components/management/benefits.html" = "<!-- MANAGEMENT_BENEFITS_COMPONENT -->"
+    "components/management/pricing.html" = "<!-- MANAGEMENT_PRICING_COMPONENT -->"
+    "components/management/contact.html" = "<!-- MANAGEMENT_CONTACT_COMPONENT -->"
     "components/integration/sections.html" = "<!-- INTEGRATION_SECTIONS_COMPONENT -->"
+    "components/integration/pricing.html" = "<!-- INTEGRATION_PRICING_COMPONENT -->"
+    "components/integration/contact.html" = "<!-- INTEGRATION_CONTACT_COMPONENT -->"
     "components/infrastructure/sections.html" = "<!-- INFRASTRUCTURE_SECTIONS_COMPONENT -->"
+    "components/infrastructure/pricing.html" = "<!-- INFRASTRUCTURE_PRICING_COMPONENT -->"
+    "components/infrastructure/contact.html" = "<!-- INFRASTRUCTURE_CONTACT_COMPONENT -->"
     "components/applications/sections.html" = "<!-- APPLICATIONS_SECTIONS_COMPONENT -->"
-    "components/analytics/hero.html" = "<!-- ANALYTICS_HERO_COMPONENT -->"
-    "components/analytics/overview.html" = "<!-- ANALYTICS_OVERVIEW_COMPONENT -->"
-    "components/analytics/features.html" = "<!-- ANALYTICS_FEATURES_COMPONENT -->"
-    "components/analytics/benefits.html" = "<!-- ANALYTICS_BENEFITS_COMPONENT -->"
+    "components/applications/pricing.html" = "<!-- APPLICATIONS_PRICING_COMPONENT -->"
+    "components/applications/contact.html" = "<!-- APPLICATIONS_CONTACT_COMPONENT -->"
 }
 
 foreach ($componentFile in $componentFiles.Keys) {

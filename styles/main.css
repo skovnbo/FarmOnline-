@@ -55,14 +55,27 @@
 }
 
 .content-section {
-    display: none;
+    display: none !important;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /* Ensure complete isolation */
+    isolation: isolate;
+    z-index: 1;
 }
 
 .content-section.active {
-    display: block;
+    display: block !important;
     opacity: 1;
+    z-index: 2;
+}
+
+/* Ensure all child elements stay within bounds */
+.content-section > * {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .shared-sections {
