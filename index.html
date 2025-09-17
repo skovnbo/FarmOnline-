@@ -30,6 +30,14 @@
 ║  │  ├─ Global Infrastructure                                                                ║
 ║  │  └─ Data Security                                                                        ║
 ║  │                                                                                          ║
+║  ├─ Smart Sensors (data-section="smart-sensors")                                           ║
+║  │  ├─ Sensor Collection Approach                                                          ║
+║  │  ├─ idol65 Pig Camera                                                                   ║
+║  │  ├─ Silo Radar Sensor                                                                   ║
+║  │  ├─ Energy Meter (kWh)                                                                  ║
+║  │  ├─ Gas Meter (m³)                                                                      ║
+║  │  └─ Water Meters                                                                        ║
+║  │                                                                                          ║
 ║  └─ Applications (data-section="applications")                                              ║
 ║     ├─ Mobile App                                                                           ║
 ║     ├─ Survey WebApp                                                                        ║
@@ -96,6 +104,10 @@
                 <button class="nav-tab" data-section="infrastructure">
                     <i data-lucide="server"></i>
                     <span>Infrastructure</span>
+                </button>
+                <button class="nav-tab" data-section="smart-sensors">
+                    <i data-lucide="activity"></i>
+                    <span>Smart Sensors</span>
                 </button>
                 <button class="nav-tab" data-section="applications">
                     <i data-lucide="smartphone"></i>
@@ -184,6 +196,38 @@
                     </a>
                 </div>
                 
+                <!-- Smart Sensors Submenu -->
+                <div class="submenu-items" data-submenu="smart-sensors">
+                    <a href="#sensors-overview" class="submenu-link active">
+                        <i data-lucide="layout-dashboard"></i>
+                        <span>Sensor Overview</span>
+                    </a>
+                    <a href="#sensor-approach" class="submenu-link">
+                        <i data-lucide="network"></i>
+                        <span>Collection Approach</span>
+                    </a>
+                    <a href="#idol65-camera" class="submenu-link">
+                        <i data-lucide="camera"></i>
+                        <span>idol65 Pig Camera</span>
+                    </a>
+                    <a href="#silo-radar" class="submenu-link">
+                        <i data-lucide="radar"></i>
+                        <span>Silo Radar Sensor</span>
+                    </a>
+                    <a href="#energy-meter" class="submenu-link">
+                        <i data-lucide="zap"></i>
+                        <span>Energy Meter (kWh)</span>
+                    </a>
+                    <a href="#gas-meter" class="submenu-link">
+                        <i data-lucide="flame"></i>
+                        <span>Gas Meter (m³)</span>
+                    </a>
+                    <a href="#water-meters" class="submenu-link">
+                        <i data-lucide="droplets"></i>
+                        <span>Water Meters</span>
+                    </a>
+                </div>
+                
                 <!-- Applications Submenu -->
                 <div class="submenu-items" data-submenu="applications">
                     <a href="#farmonline-mobile" class="submenu-link active">
@@ -258,6 +302,21 @@
                 <a href="#bluecontrol-systems" class="submenu-link">Deployment Options</a>
                 <a href="#global-infrastructure" class="submenu-link">Global Infrastructure</a>
                 <a href="#data-security" class="submenu-link">Data Security</a>
+            </div>
+        </div>
+        
+        <div class="mobile-section" data-section="smart-sensors">
+            <div class="mobile-section-title">
+                <i data-lucide="activity"></i>
+                Smart Sensors
+            </div>
+            <div class="mobile-nav-links">
+                <a href="#sensors-overview" class="submenu-link">Sensor Collection Approach</a>
+                <a href="#idol65-camera" class="submenu-link">idol65 Pig Camera</a>
+                <a href="#silo-radar" class="submenu-link">Silo Radar Sensor</a>
+                <a href="#energy-meter" class="submenu-link">Energy Meter (kWh)</a>
+                <a href="#gas-meter" class="submenu-link">Gas Meter (m³)</a>
+                <a href="#water-meters" class="submenu-link">Water Meters</a>
             </div>
         </div>
         
@@ -1387,6 +1446,341 @@
                         </div>
                         <div class="form-submit">
                             <button type="submit" class="submit-btn">Discuss Infrastructure</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <!-- SMART SENSORS SECTION -->
+        <div class="content-section" data-section="smart-sensors">
+            <section id="sensors-overview" class="hero-section">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1>Smart Sensor Network</h1>
+                            <p class="hero-subtitle">Advanced sensor technologies for comprehensive farm monitoring and data-driven decision making.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sensor Collection Approach -->
+            <section id="sensor-approach" class="feature-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Sensor Collection Approach</h2>
+                        <p>Our comprehensive sensor strategy combines standalone data collection devices with integrated control sensors through BlueControl climate computers for seamless farm monitoring.</p>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i data-lucide="activity"></i>
+                            </div>
+                            <h3>Standalone Sensors</h3>
+                            <p>Independent monitoring devices that collect and transmit data directly to FarmOnline+ for immediate analysis and alerts.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i data-lucide="link-2"></i>
+                            </div>
+                            <h3>BlueControl Integration</h3>
+                            <p>Control sensors indirectly connected through BlueControl climate computers, providing seamless integration with existing farm management systems.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i data-lucide="database"></i>
+                            </div>
+                            <h3>Unified Data Platform</h3>
+                            <p>All sensor data flows into a single platform for comprehensive monitoring, analysis, and automated decision-making processes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- idol65 Pig Camera -->
+            <section id="idol65-camera" class="app-section">
+                <div class="container">
+                    <div class="app-content">
+                        <div class="app-info">
+                            <div class="app-header">
+                                <div class="app-icon">
+                                    <i data-lucide="camera"></i>
+                                </div>
+                                <div>
+                                    <h2>idol65 Pig Camera</h2>
+                                    <p class="app-subtitle">Advanced AI-powered visual monitoring for pig welfare and behavior analysis</p>
+                                </div>
+                            </div>
+                            
+                            <div class="app-features">
+                                <div class="feature-item">
+                                    <i data-lucide="eye"></i>
+                                    <span><strong>Computer Vision:</strong> AI-powered image analysis for pig behavior monitoring</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i data-lucide="heart"></i>
+                                    <span><strong>Welfare Monitoring:</strong> Automatic detection of health and welfare indicators</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i data-lucide="bell"></i>
+                                    <span><strong>Alert System:</strong> Real-time notifications for abnormal behavior or conditions</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i data-lucide="trending-up"></i>
+                                    <span><strong>Growth Tracking:</strong> Visual assessment of pig development and weight estimation</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="app-screenshot">
+                            <div class="screenshot-placeholder">
+                                <i data-lucide="camera" style="font-size: 4rem; color: #0066cc;"></i>
+                                <p>idol65 Camera Interface</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Silo Radar Sensor -->
+            <section id="silo-radar" class="app-section alt">
+                <div class="container">
+                    <div class="app-content">
+                        <div class="app-screenshot">
+                            <div class="screenshot-placeholder">
+                                <i data-lucide="radar" style="font-size: 4rem; color: #0066cc;"></i>
+                                <p>Silo Level Monitoring</p>
+                            </div>
+                        </div>
+                        
+                        <div class="app-info">
+                            <div class="app-header">
+                                <div class="app-icon">
+                                    <i data-lucide="radar"></i>
+                                </div>
+                                <div>
+                                    <h2>Silo Radar Sensor</h2>
+                                    <p class="app-subtitle">Precise feed level monitoring with contactless radar technology</p>
+                                </div>
+                            </div>
+                            
+                            <div class="app-features">
+                                <div class="feature-item">
+                                    <i data-lucide="ruler"></i>
+                                    <span><strong>Precision Measurement:</strong> Accurate feed level detection within millimeters</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i data-lucide="cloud-rain"></i>
+                                    <span><strong>Weather Resistant:</strong> Reliable operation in all weather conditions</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i data-lucide="truck"></i>
+                                    <span><strong>Delivery Planning:</strong> Automated feed ordering based on consumption patterns</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i data-lucide="bar-chart"></i>
+                                    <span><strong>Consumption Analytics:</strong> Historical data analysis for feed optimization</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Energy Meter (kWh) -->
+            <section id="energy-meter" class="app-section">
+                <div class="container">
+                    <div class="app-content">
+                        <div class="app-info">
+                            <div class="app-header">
+                                <div class="app-icon">
+                                    <i data-lucide="zap"></i>
+                                </div>
+                                <div>
+                                    <h2>Energy Meter (kWh)</h2>
+                                    <p class="app-subtitle">Comprehensive electrical energy monitoring and management</p>
+                                </div>
+                            </div>
+                            
+                            <div class="app-features">
+                                <div class="feature-item">
+                                    <i data-lucide="activity"></i>
+                                    <span><strong>Real-time Monitoring:</strong> Live energy consumption tracking and reporting</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i data-lucide="pie-chart"></i>
+                                    <span><strong>Usage Analytics:</strong> Detailed breakdown of energy consumption by zones</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i data-lucide="dollar-sign"></i>
+                                    <span><strong>Cost Optimization:</strong> Energy efficiency recommendations and cost analysis</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i data-lucide="alert-triangle"></i>
+                                    <span><strong>Peak Detection:</strong> Alerts for unusual energy consumption patterns</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="app-screenshot">
+                            <div class="screenshot-placeholder">
+                                <i data-lucide="zap" style="font-size: 4rem; color: #0066cc;"></i>
+                                <p>Energy Monitoring Dashboard</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gas Meter (m³) -->
+            <section id="gas-meter" class="app-section alt">
+                <div class="container">
+                    <div class="app-content">
+                        <div class="app-screenshot">
+                            <div class="screenshot-placeholder">
+                                <i data-lucide="flame" style="font-size: 4rem; color: #0066cc;"></i>
+                                <p>Gas Consumption Tracking</p>
+                            </div>
+                        </div>
+                        
+                        <div class="app-info">
+                            <div class="app-header">
+                                <div class="app-icon">
+                                    <i data-lucide="flame"></i>
+                                </div>
+                                <div>
+                                    <h2>Gas Meter (m³)</h2>
+                                    <p class="app-subtitle">Precise gas consumption monitoring for heating and operational systems</p>
+                                </div>
+                            </div>
+                            
+                            <div class="app-features">
+                                <div class="feature-item">
+                                    <i data-lucide="gauge"></i>
+                                    <span><strong>Volume Tracking:</strong> Accurate measurement of gas consumption in cubic meters</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i data-lucide="thermometer"></i>
+                                    <span><strong>Heating Efficiency:</strong> Monitor heating system performance and efficiency</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i data-lucide="calendar"></i>
+                                    <span><strong>Usage Patterns:</strong> Seasonal and daily consumption pattern analysis</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i data-lucide="shield-check"></i>
+                                    <span><strong>Safety Monitoring:</strong> Leak detection and safety alert system</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Water Meters -->
+            <section id="water-meters" class="app-section">
+                <div class="container">
+                    <div class="app-content">
+                        <div class="app-info">
+                            <div class="app-header">
+                                <div class="app-icon">
+                                    <i data-lucide="droplets"></i>
+                                </div>
+                                <div>
+                                    <h2>Water Meters</h2>
+                                    <p class="app-subtitle">Comprehensive water usage monitoring across all farm operations</p>
+                                </div>
+                            </div>
+                            
+                            <div class="app-features">
+                                <div class="feature-item">
+                                    <i data-lucide="droplet"></i>
+                                    <span><strong>Multi-Point Monitoring:</strong> Track water usage across drinking, cleaning, and irrigation systems</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i data-lucide="waves"></i>
+                                    <span><strong>Flow Rate Analysis:</strong> Monitor water pressure and flow rate optimization</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i data-lucide="leaf"></i>
+                                    <span><strong>Conservation Insights:</strong> Water usage efficiency recommendations and savings opportunities</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i data-lucide="alert-circle"></i>
+                                    <span><strong>Leak Detection:</strong> Early warning system for water leaks and unusual consumption</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="app-screenshot">
+                            <div class="screenshot-placeholder">
+                                <i data-lucide="droplets" style="font-size: 4rem; color: #0066cc;"></i>
+                                <p>Water Usage Dashboard</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Form for Smart Sensors Section -->
+            <section class="contact-form-section">
+                <div class="contact-form-container">
+                    <div class="contact-form-header">
+                        <h2>Smart Sensor Solutions</h2>
+                        <p>Discover how our advanced sensor network can provide comprehensive monitoring and data insights for your farm operations.</p>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="sensor-name">Full Name *</label>
+                                <input type="text" id="sensor-name" name="name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sensor-email">Email Address *</label>
+                                <input type="email" id="sensor-email" name="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sensor-company">Company/Farm Name</label>
+                                <input type="text" id="sensor-company" name="company" placeholder="Enter your company or farm name">
+                            </div>
+                            <div class="form-group">
+                                <label for="sensor-phone">Phone Number</label>
+                                <input type="tel" id="sensor-phone" name="phone" placeholder="Enter your phone number">
+                            </div>
+                            <div class="form-group">
+                                <label for="sensor-type">Sensor Interest</label>
+                                <select id="sensor-type" name="sensor-type">
+                                    <option value="">Which sensors interest you most?</option>
+                                    <option value="pig-camera">idol65 Pig Camera</option>
+                                    <option value="silo-radar">Silo Radar Sensor</option>
+                                    <option value="energy-meter">Energy Meter (kWh)</option>
+                                    <option value="gas-meter">Gas Meter (m³)</option>
+                                    <option value="water-meters">Water Meters</option>
+                                    <option value="complete-package">Complete Sensor Package</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="sensor-farm-type">Farm Type</label>
+                                <select id="sensor-farm-type" name="farm-type">
+                                    <option value="">What type of farm operation?</option>
+                                    <option value="pig-farming">Pig Farming</option>
+                                    <option value="poultry">Poultry</option>
+                                    <option value="dairy">Dairy</option>
+                                    <option value="mixed-farming">Mixed Farming</option>
+                                    <option value="other">Other Agriculture</option>
+                                </select>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="sensor-message">Sensor Requirements</label>
+                                <textarea id="sensor-message" name="message" placeholder="Tell us about your monitoring needs, specific sensors of interest, or current challenges you'd like to address with smart sensor technology..."></textarea>
+                            </div>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="submit-btn">Explore Smart Sensors</button>
                         </div>
                     </form>
                 </div>
